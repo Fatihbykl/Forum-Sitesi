@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="372ea776-1ff7-4af8-80e2-ec736ab35722" name="Default Changelist" comment="" />
+    <list default="true" id="372ea776-1ff7-4af8-80e2-ec736ab35722" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/Ranks/Admins.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/Ranks/Admins.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/Ranks/Editors.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/Ranks/Editors.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/Ranks/Gold.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/Ranks/Gold.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/Ranks/Gümüş.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/Ranks/Gümüş.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/Ranks/Moderators.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/Ranks/Moderators.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/Ranks/New Member.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/Ranks/New Member.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/bg-stadium.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/bg-stadium.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/category_images/iconfinder_02_Soccer_300768.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/category_images/iconfinder_02_Soccer_300768.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/category_images/iconfinder_02_Soccer_300768_6nWltXL.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/category_images/iconfinder_02_Soccer_300768_6nWltXL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/category_images/iconfinder_02_Soccer_300768_9yzK3cj.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/category_images/iconfinder_02_Soccer_300768_9yzK3cj.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/category_images/iconfinder_02_Soccer_300768_EW3yDjY.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/category_images/iconfinder_02_Soccer_300768_EW3yDjY.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/category_images/iconfinder_02_Soccer_300768_lUw4cCd.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/category_images/iconfinder_02_Soccer_300768_lUw4cCd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/category_images/iconfinder_02_Soccer_300768_xy4pySp.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/category_images/iconfinder_02_Soccer_300768_xy4pySp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/ckeditor/2019/11/06/dog.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/ckeditor/2019/11/06/dog.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/default-pp.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/default-pp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/dog.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/dog.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/logo/bahistim.svg" beforeDir="false" afterPath="$PROJECT_DIR$/media/logo/bahistim.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/logo/bahistimiyazisiz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/media/logo/bahistimiyazisiz.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/logo/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/media/logo/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/logo/logo2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/media/logo/logo2.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/logo/logo3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/media/logo/logo3.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/user_uploaded_images/EdwardNorton/dog.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/user_uploaded_images/EdwardNorton/dog.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/user_uploaded_images/EdwardNorton/won.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/user_uploaded_images/EdwardNorton/won.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/user_uploaded_images/Fatihbykl/won.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/user_uploaded_images/Fatihbykl/won.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/user_uploaded_images/MadsMikkelsen/hero-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/user_uploaded_images/MadsMikkelsen/hero-bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/user_uploaded_images/MarlaSinger/won.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/user_uploaded_images/MarlaSinger/won.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/media/won.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/won.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/static/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/static/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/static/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/static/js/bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/static/js/jQuery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jQuery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/templates/registration/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/templates/registration/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,10 +101,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mainApp/static/css/style2.css">
+        <entry file="file://$PROJECT_DIR$/static/css/style2.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="1141" column="1" lean-forward="true" selection-start-line="1141" selection-start-column="1" selection-end-line="1141" selection-end-column="1" />
+            <state relative-caret-position="131">
+              <caret line="1141" column="1" selection-start-line="1141" selection-start-column="1" selection-end-line="1141" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -75,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/mainApp/templates/post-temps/page-single-topic.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="373">
-              <caret line="110" column="97" lean-forward="true" selection-start-line="110" selection-start-column="97" selection-end-line="110" selection-end-column="97" />
+              <caret line="110" column="97" selection-start-line="110" selection-start-column="97" selection-end-line="110" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -236,19 +274,6 @@
               <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
               <item name="mainApp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
-              <item name="mainApp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
-              <item name="mainApp" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -389,16 +414,15 @@
       <workItem from="1573029227126" duration="22034000" />
       <workItem from="1573066177651" duration="8675000" />
       <workItem from="1573131350184" duration="27755000" />
-      <workItem from="1573212190830" duration="4302000" />
+      <workItem from="1573212190830" duration="5288000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341523000" />
+    <option name="totallyTimeSpent" value="342509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3167785" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -414,7 +438,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50201344" side_tool="true" weight="0.22521247" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49798658" visible="true" weight="0.19121814" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49798658" weight="0.19121814" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -492,7 +516,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/static/js/jQuery.js">
+    <entry file="file://$PROJECT_DIR$/static/js/jQuery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
@@ -502,7 +526,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/media/logo/bahistimiyazisiz.svg">
+    <entry file="file://$PROJECT_DIR$/media/logo/bahistimiyazisiz.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mainApp/templates/includes/pagination.html">
@@ -532,7 +556,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/static/css/style.min.css">
+    <entry file="file://$PROJECT_DIR$/static/css/style.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="11" column="59337" selection-start-line="11" selection-start-column="59337" selection-end-line="11" selection-end-column="59337" />
@@ -583,14 +607,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/static/js/bundle.js">
+    <entry file="file://$PROJECT_DIR$/static/js/bundle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="6252" column="51" selection-start-line="6252" selection-start-column="51" selection-end-line="6252" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/static/css/style.css">
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="11327" column="20" selection-start-line="11327" selection-start-column="20" selection-end-line="11327" selection-end-column="20" />
@@ -814,14 +838,14 @@
     <entry file="file://$PROJECT_DIR$/mainApp/templates/post-temps/page-single-topic.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
-          <caret line="110" column="97" lean-forward="true" selection-start-line="110" selection-start-column="97" selection-end-line="110" selection-end-column="97" />
+          <caret line="110" column="97" selection-start-line="110" selection-start-column="97" selection-end-line="110" selection-end-column="97" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/static/css/style2.css">
+    <entry file="file://$PROJECT_DIR$/static/css/style2.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="1141" column="1" lean-forward="true" selection-start-line="1141" selection-start-column="1" selection-end-line="1141" selection-end-column="1" />
+        <state relative-caret-position="131">
+          <caret line="1141" column="1" selection-start-line="1141" selection-start-column="1" selection-end-line="1141" selection-end-column="1" />
         </state>
       </provider>
     </entry>

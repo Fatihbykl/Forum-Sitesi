@@ -2607,7 +2607,7 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 !function (t, e) {
-    "object" == typeof exports && "undefined" != typeof module ? e(exports, require("jquery"), require("popper.js")) : "function" == typeof define && define.amd ? define(["exports", "jquery", "popper.js"], e) : e((t = t || self).bootstrap = {}, t.jQuery, t.Popper)
+    "object" == typeof exports && "undefined" != typeof module ? e(exports, require("static/js/jQuery"), require("popper.js")) : "function" == typeof define && define.amd ? define(["exports", "static/js/jQuery", "popper.js"], e) : e((t = t || self).bootstrap = {}, t.jQuery, t.Popper)
 }(this, function (t, g, u) {
     "use strict";
 
@@ -4064,7 +4064,7 @@
 * http://dimsemenov.com/plugins/magnific-popup/
 * Copyright (c) 2016 Dmitry Semenov; */
 !function (a) {
-    "function" == typeof define && define.amd ? define(["jquery"], a) : a("object" == typeof exports ? require("jquery") : window.jQuery || window.Zepto)
+    "function" == typeof define && define.amd ? define(["static/js/jQuery"], a) : a("object" == typeof exports ? require("static/js/jQuery") : window.jQuery || window.Zepto)
 }(function (a) {
     var b, c, d, e, f, g, h = "Close", i = "BeforeClose", j = "AfterClose", k = "BeforeAppend", l = "MarkupParse",
         m = "Open", n = "Change", o = "mfp", p = "." + o, q = "mfp-ready", r = "mfp-removing", s = "mfp-prevent-close",
@@ -4643,7 +4643,7 @@
 
         if (typeof define === 'function' && define.amd) {
             // AMD. Register as an anonymous module.
-            define(['jquery'], mountJQuery);
+            define(['static/js/jQuery'], mountJQuery);
         } else {
             var jq = window.jQuery ? window.jQuery : window.$;
             if (typeof jq !== 'undefined') {
