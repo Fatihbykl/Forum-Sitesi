@@ -1,0 +1,77 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BahisTimi - Giriş Yap</title>
+    <meta name="keywords" content="giriş yap, üye, giriş">
+    <meta name="description" content="BahisTimi üye giriş sayfası.">
+    <link rel="shortcut icon" href="/media/logo/favicon.ico">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <script src="{% static 'js/jQuery.js' %}"></script>
+</head>
+<body>
+<main id="tt-pageContent" class="tt-offset-none">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {% include 'includes/messages.html' %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tt-loginpages-wrapper">
+            <div class="tt-loginpages">
+                <a href="{% url 'homepage' %}" class="tt-block-title">
+                    <img src="/media/logo/logo2.svg" alt="">
+                </a>
+                <form method="post" action="{% url 'login2' %}" class="form-default">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                            <label for="login{{ field.label }}">{{ field.label }}</label>
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="settingsCheckBox01" name="checkbox-rememberme">
+                                    <label for="settingsCheckBox01">
+                                        <span class="check"></span>
+                                        <span class="box"></span>
+                                        <span class="tt-text">Beni Hatırla</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col ml-auto text-right">
+                            <a href="{% url 'password_reset' %}" class="tt-underline">Şifremi Unuttum</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-secondary btn-block">Giriş Yap</button>
+                    </div>
+                    <div class="row">
+                    </div>
+                    <p>Henüz üye değil misin? <a href="{% url 'signup2' %}" class="tt-underline">Üye Ol</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="js/bundle.js"></script>
+<script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#close-alert').click(function () {
+            $('#alert').hide()
+        })
+    })
+</script>
+</body>
+</html>

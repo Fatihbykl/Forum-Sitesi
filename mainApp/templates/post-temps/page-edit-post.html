@@ -1,0 +1,42 @@
+{% extends 'other/_extend-page.html' %}
+{% load static %}
+
+{% block head %}
+    <title>BahisTimi - Konu Düzenle</title>
+    <meta name="keywords" content="konu düzenle, edit">
+    <meta name="description" content="Konu düzenleme">
+{% endblock %}
+
+{% block body %}
+    <main id="tt-pageContent">
+        <div class="container">
+            <div class="tt-wrapper-inner background-header p-5 mb-3">
+                <h1 class="tt-title-border">
+                    Konu Düzenle
+                </h1>
+                <form method="post" action="{% url 'edit_post' post.slug %}" class="form-default form-create-topic">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="inputTopicTitle">Konu Başlığı</label>
+                        <div class="tt-value-wrapper">
+                            {{ form.title }}
+                            <span class="tt-value-input">MAX 100</span>
+                        </div>
+                        <div class="tt-note"></div>
+                    </div>
+                    <div class="pt-editor">
+                        <h6 class="pt-title">Konu İçeriği</h6>
+                        <div class="form-group">
+                            {{ form.body }}
+                        </div>
+                        <div class="row">
+                            <div class="col-auto ml-md-auto">
+                                <button type="submit" class="btn btn-secondary btn-width-lg">Düzenle</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock %}

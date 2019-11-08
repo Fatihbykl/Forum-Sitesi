@@ -1,0 +1,62 @@
+{% if posts.has_other_pages %}
+    <div class="wrapper mt-5">
+        <nav>
+            <ul class="pager mb-3">
+                <li class="pager__item pager__item--prev">
+                    {% if posts.has_previous %}
+                        <a class="pager__link" href="?page={{ posts.previous_page_number }}">
+                            &laquo;
+                        </a>
+                    {% else %}
+                        <a class="pager__link">
+                            &laquo;
+                        </a>
+                    {% endif %}
+                </li>
+                {% for page in posts.paginator.page_range %}
+                    {% if posts.number == page %}
+                        {% if page|add:-3 > 0 %}
+                            <li class="pager__item"><a class="pager__link">...</a></li>
+                        {% endif %}
+                        {% if page|add:-2 > 0 %}
+                            <li class="pager__item"><a class="pager__link"
+                                                       href="?page={{ page|add:-2 }}">{{ page|add:-2 }}</a>
+                            </li>
+                        {% endif %}
+                        {% if page|add:-1 > 0 %}
+                            <li class="pager__item"><a class="pager__link"
+                                                       href="?page={{ page|add:-1 }}">{{ page|add:-1 }}</a>
+                            </li>
+                        {% endif %}
+                        <li class="pager__item active"><a class="pager__link"
+                                                          href="?page={{ page }}">{{ page }}</a></li>
+                        {% if page|add:1 <= posts.paginator.num_pages %}
+                            <li class="pager__item"><a class="pager__link"
+                                                       href="?page={{ page|add:1 }}">{{ page|add:1 }}</a>
+                            </li>
+                        {% endif %}
+                        {% if page|add:2 <= posts.paginator.num_pages %}
+                            <li class="pager__item"><a class="pager__link"
+                                                       href="?page={{ page|add:2 }}">{{ page|add:2 }}</a>
+                            </li>
+                        {% endif %}
+                        {% if page|add:3 <= posts.paginator.num_pages %}
+                            <li class="pager__item"><a class="pager__link">...</a></li>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                <li class="pager__item pager__item--next">
+                    {% if posts.has_next %}
+                        <a class="pager__link" href="?page={{ posts.next_page_number }}">
+                            &raquo;
+                        </a>
+                    {% else %}
+                        <a class="pager__link">
+                            &raquo;
+                        </a>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endif %}

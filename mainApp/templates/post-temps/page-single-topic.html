@@ -1,0 +1,388 @@
+{% extends 'other/_extend-page.html' %}
+{% load static %}
+{% load hitcount_tags %}
+
+{% block head %}
+    <title>BahisTimi - {{ post.title }}</title>
+    <meta name="description" content="{{ post.body }}">
+{% endblock %}
+
+{% block body %}
+    <main id="tt-pageContent">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <div class="navigate-bar background-header mt-3">
+                        <a href="{% url 'homepage' %}"><span>Ana Sayfa</span></a>
+                        <span class="iconify" data-icon="bytesize:chevron-right" data-inline="false"></span>
+                        <a href="{% url 'sub_category' post.category.slug %}"><span> {{ post.category.name }} </span></a>
+                        <span class="iconify" data-icon="bytesize:chevron-right" data-inline="false"></span>
+                        <a href="{% url 'single_topic' post.slug %}"><span class="bold">{{ post.title }}</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="tt-single-topic-list">
+                <div class="tt-item border-top" style="border-color: #357CBD;">
+                    <div class="tt-info-box pb-2 pt-2 pl-4 pr-4">
+                        <div class="tt-row-icon2">
+                            <div style="width: 100%;">
+                                <h4>{{ post.title }}</h4>
+                            </div>
+                            <ul class="p-0 m-0">
+                                <li class="">
+                                    <a href="#" class="color-blue hover-blue">
+                                    <span class="iconify" data-icon="octicon:comment-discussion"
+                                          data-inline="false"></span>
+                                        <span class="">{{ post.get_comments.count }}</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="color-blue hover-blue">
+                                        <span class="iconify" data-icon="ant-design:eye-outline"
+                                              data-inline="false"></span>
+                                        <span class="">{% get_hit_count for post %}</span>
+                                    </a>
+                                </li>
+                                {% if request.user.user.user_rank.post_lock_perm %}
+                                    <li class="">
+                                    <span id="lock-post" class="color-blue hover-blue">
+                                        <span class="iconify" data-icon="ei:lock" data-inline="false"></span>
+                                        <span class="">{% if post.is_locked %}Konu Kilitli{% else %}Konuyu
+                                            Kilitle{% endif %}</span>
+                                    </span>
+                                    </li>
+                                {% endif %}
+                                {% if request.user.user.user_rank.pin_perm %}
+                                    <li class="">
+                                        {% if post.is_fixed %}
+                                            <a href="{% url 'pin_post' post.category.slug post.slug %}"
+                                               class="color-blue hover-blue">
+                                            <span class="iconify" data-icon="ic:round-pin-off"
+                                                  data-inline="false"></span>
+                                                <span class="">Sabitlemeyi Kaldır</span>
+                                            </a>
+                                        {% else %}
+                                            <a href="{% url 'pin_post' post.category.slug post.slug %}"
+                                               class="color-blue hover-blue">
+                                                <span class="iconify" data-icon="ic:round-pin"
+                                                      data-inline="false"></span>
+                                                <span class="">Konuyu Başa Tuttur</span>
+                                            </a>
+                                        {% endif %}
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tt-item">
+                    <div class="post-header background-header border-top">
+                        <div class="tt-item-info info-bottom">
+                            <span class="user-panel-createdtime">{{ post.created_time }}</span>
+                            <span class="float-right color-green ml-2">#1</span>
+                            {% if request.user == post.publisher or request.user.user.user_rank.delete_post_perm %}
+                                <span id="delete-post"
+                                      class="color-green hover-green tt-small-indent float-right">
+                                            <span class="iconify user-panel-icon"
+                                                  data-icon="ic:sharp-delete-forever"
+                                                  data-inline="false"></span>
+                                        </span>
+                            {% endif %}
+                            {% if request.user == post.publisher or request.user.user.user_rank.edit_post_perm %}
+                                <a href="{% url 'edit_post' post.slug %}"
+                                   class="tt-icon-btn tt-hover-02 tt-small-indent float-right m-0">
+                                    <span class="color-green hover-green tt-small-indent">
+                                        <span class="iconify user-panel-icon" data-icon="fa-solid:edit" data-inline="false"></span>
+                                    </span>
+                                </a>
+                            {% endif %}
+                            <span id="like-post-{{ post.id }}"
+                                  class="hover-green color-green hover-pointer float-right">
+                                            <span class="iconify user-panel-icon" data-icon="ant-design:like-outline"
+                                                  data-inline="false"></span>
+                                            <span class="tt-text"
+                                                  id="post-like-count-{{ post.id }}">{{ post.get_like_count }}</span>
+                                  </span>
+                        </div>
+                    </div>
+                    <div class="tt-single-topic row p-0">
+                        <div class="col-lg-2 col-md-3">
+                            <div class="user-comment-left background-header" style="height: 100%;">
+                                <div class="tt-avatar-icon" style="position: unset;width: 100%;">
+                                    <img class="user-avatar" alt="Kullanıcı Profil Fotoğrafı"
+                                         src="/media/{{ post.publisher.user.photo }}">
+                                </div>
+                                <div class="user-info text-center">
+                                    <span>{{ post.publisher.username }}</span>
+                                    <div class="{{ post.publisher.user.user_rank.rank }}"></div>
+                                </div>
+                                <div class="user-extra-info">
+                                    <ul class="m-0 p-0">
+                                        <li>Beğeni: <span>{{ post.publisher.user.get_total_likes }}</span></li>
+                                        <li>Mesaj: <span>{{ post.publisher.user.get_comment_count }}</span></li>
+                                        <li>Puan: <span>{{ post.publisher.user.point }}</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-md-9">
+                            <div class="tt-item-description" style="word-break: break-word">
+                                {% if request.user.is_authenticated %}
+                                    {{ post.body|safe }}
+                                {% else %}
+                                    Forum içeriğini görebilmeniz için <a href="{% url 'signup2' %}">üye olmanız</a>
+                                    gerekmektedir.
+                                    Zaten hesabınız varsa lütfen <a href="{% url 'login2' %}">Giriş</a> yapınız.
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% for comment in posts %}
+                    <div class="tt-item">
+                        <div class="post-header background-header border-top">
+                            <div class="tt-item-info info-bottom">
+                                <span class="user-panel-createdtime">{{ comment.created_time }}</span>
+                                <span class="float-right color-green ml-2">#{{ forloop.counter|add:1 }}</span>
+                                {% if request.user == comment.who_comment or request.user.user.user_rank.del_comments_perm %}
+                                    <span id="delete-comment-{{ comment.id }}"
+                                          class="color-green hover-green tt-small-indent float-right">
+                                            <span class="iconify user-panel-icon"
+                                                  data-icon="ic:sharp-delete-forever"
+                                                  data-inline="false"></span>
+                                        </span>
+                                {% endif %}
+                                {% if request.user == comment.who_comment or request.user.user.user_rank.edit_comments_perm %}
+                                    <a href="{% url 'edit_comment' comment.id %}"
+                                       class="tt-icon-btn tt-hover-02 tt-small-indent float-right m-0">
+                                    <span class="color-green hover-green tt-small-indent">
+                                        <span class="iconify user-panel-icon" data-icon="fa-solid:edit" data-inline="false"></span>
+                                    </span>
+                                    </a>
+                                {% endif %}
+                                <span id="reply-{{ comment.id }}" class="hover-green float-right tt-small-indent">
+                                            <span class="iconify user-panel-icon" data-icon="mdi:reply-outline"
+                                                  data-inline="false"></span>
+                                    </span>
+                                <span id="like-comment-{{ comment.id }}"
+                                      class="hover-green color-green hover-pointer float-right">
+                                            <span class="iconify user-panel-icon" data-icon="ant-design:like-outline"
+                                                  data-inline="false"></span>
+                                            <span class="tt-text"
+                                                  id="like-count-{{ comment.id }}">{{ comment.get_like_count }}</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="tt-single-topic row p-0" id="{{ comment.id }}">
+                            <div class="col-lg-2 col-md-3">
+                                <div class="user-comment-left background-header" style="height: 100%;">
+                                    <div class="tt-avatar-icon" style="position: unset;width: 100%;">
+                                        <img class="user-avatar" alt="Kullanıcı Profil Fotoğrafı"
+                                             src="/media/{{ comment.who_comment.user.photo }}">
+                                    </div>
+                                    <div class="user-info text-center">
+                                        <span>{{ comment.who_comment.username }}</span>
+                                        <div class="{{ comment.who_comment.user.user_rank.rank }}"></div>
+                                    </div>
+                                    <div class="user-extra-info">
+                                        <ul class="m-0 p-0">
+                                            <li>Beğeni: <span>{{ comment.who_comment.user.get_total_likes }}</span></li>
+                                            <li>Mesaj: <span>{{ comment.who_comment.user.get_comment_count }}</span>
+                                            </li>
+                                            <li>Puan: <span>{{ comment.who_comment.user.point }}</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-9">
+                                <div class="tt-item-description pb-4" style="word-break: break-word">
+                                    {% if comment.reply %}
+                                        <div class="topic-inner-list m-0">
+                                            <div class="topic-inner" style="padding-top: 5px;padding-bottom: 5px;">
+                                                <div class="topic-inner-title">
+                                                    <div class="topic-inner-avatar">
+                                                        <img alt=""
+                                                             style="width: 60px;height: 60px;border-radius: 50%;padding: 2px;"
+                                                             class="img-thumbnail"
+                                                             src="/media/{{ comment.reply.who_comment.user.photo }}">
+                                                    </div>
+                                                    <div class="topic-inner-title"><a
+                                                            href="#"><b>{{ comment.reply.who_comment.username }}</b></a>
+                                                    </div>
+                                                </div>
+                                                <div class="topic-inner-description" style="word-break: break-word;">
+                                                    {{ comment.reply.comment_text|safe }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    {% if request.user.is_authenticated %}
+                                        {% if comment.embed_code %}
+                                            {% autoescape off %}
+                                                {{ comment.embed_code|safe }}
+                                            {% endautoescape %}
+                                        {% endif %}
+                                        {{ comment.comment_text }}
+                                    {% else %}
+                                        Forum içeriğini görebilmeniz için <a href="{% url 'signup2' %}">üye olmanız</a>
+                                        gerekmektedir.
+                                        Zaten hesabınız varsa lütfen <a href="{% url 'login2' %}">Giriş</a> yapınız.
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            $('#delete-comment-{{ comment.id }}').click(function () {
+                                if (confirm('Yorumu silmek istediğinize emin misiniz?')) {
+                                    location.href = "{% url 'delete_comment' comment.id %}";
+                                }
+                            });
+
+                            $('#like-comment-{{ comment.id }}').click(function () {
+                                $.ajax({
+                                    url: "{% url 'like_comment' comment.id %}",
+                                    success: function (data) {
+                                        if (data !== 'liked') {
+                                            $('#like-count-{{ comment.id }}').text(data);
+                                        }
+                                        if (data === 'f') {
+                                            location.href = "{% url 'login2' %}"
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Bir hata oluştu.");
+                                    },
+                                });
+                            });
+
+                            $('#reply-{{ comment.id }}').click(function () {
+                                location.href = "{% url 'reply_to_comment' post.slug comment.id %}";
+                            })
+                        })
+                    </script>
+                {% endfor %}
+                {% include 'includes/pagination.html' %}
+            </div>
+            <div class="tt-wrapper-inner ml-0 mr-0 mt-5" style="background-color: white;padding: 20px 40px;">
+                <h4 class="tt-title-separator mt-2 mb-2" style="z-index: 1;">
+                    <span style="background-color: white">Yorum Yap</span>
+                </h4>
+                <div class="pt-editor form-default">
+                    {% if request.user.is_authenticated %}
+                        {% if not post.is_locked %}
+                            <form method="post" action="{% url 'make_comment' post.slug %}">
+                                <div id="embed-modal">
+                                    <div>
+                                        <h5 class="bold">Tweet Ekle</h5>
+                                        Embed Kodu:
+                                        <input aria-label="embed" name="embed-input" type="text">
+                                        <p class="mt-3">Lütfen girdiğiniz linkin embed kodu olduğundan emin olun.
+                                            <a href="https://publish.twitter.com/">Buradan</a> tweet linkini embed
+                                            koduna çevirebilirsiniz.</p>
+                                        <button id="close-modal" class="btn btn-color02 mt-3" type="button">Tamam
+                                        </button>
+                                    </div>
+                                </div>
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    {{ commentForm.comment_text }}
+                                </div>
+                                <div class="pt-row">
+                                    <div class="col-auto" style="width: 100%;">
+                                        <button type="submit" class="bttn-2 bttn-color2 float-right ml-3">Gönder
+                                        </button>
+                                        <button id="embed-code" type="button" class="bttn-2 bttn-color2 float-right">
+                                            Tweet Ekle
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        {% else %}
+                            <div class="tt-item tt-wrapper-danger">
+                                <div class="tt-single-topic">
+                                    <div class="tt-item-header pt-noborder" style="float: left;margin-right: 40px;">
+                                        <div class="tt-item-info info-top">
+                                            <div class="tt-avatar-icon">
+                                                <i class="tt-icon">
+                                                <span style="width: 26px;height: 26px;" class="iconify"
+                                                      data-icon="dashicons:lock-alt" data-inline="false"></span>
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tt-item-description">
+                                        Bu konu moderatör tarafından kilitlenmiş.
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <div class="tt-item tt-wrapper-danger">
+                            <div class="tt-single-topic">
+                                <div class="tt-item-header pt-noborder" style="float: left;margin-right: 40px;">
+                                    <div class="tt-item-info info-top">
+                                        <div class="tt-avatar-icon">
+                                            <i class="tt-icon">
+                                                <span class="iconify" style="width: 26px;height: 26px"
+                                                      data-icon="ps:forbidden" data-inline="false"></span>
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tt-item-description">
+                                    Yorum yapabilmeniz için üye olmanız gerekmektedir.
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block js %}
+    <script>
+        $(document).ready(function () {
+            $('#delete-post').click(function () {
+                if (confirm('Gönderiyi silmek istediğinize emin misiniz?')) {
+                    location.href = "{% url 'delete_post' post.slug %}";
+                }
+            });
+            {% if not post.is_locked %}
+                $('#lock-post').click(function () {
+                    if (confirm('Gönderiyi kilitlemek istediğinize emin misiniz?')) {
+                        location.href = "{% url 'lock_post' post.slug %}";
+                    }
+                });
+            {% endif %}
+
+            $('#like-post-{{ post.id }}').click(function () {
+                $.ajax({
+                    url: "{% url 'like_post' post.slug %}",
+                    success: function (data) {
+                        if (data !== 'liked') {
+                            $('#post-like-count-{{ post.id }}').text(data);
+                        }
+                        if (data === 'f') {
+                            location.href = "{% url 'login2' %}"
+                        }
+                    },
+                    error: function () {
+                        alert("Bir hata oluştu.");
+                    },
+                })
+            });
+
+            $('#embed-code').click(function () {
+                $('#embed-modal').show(700);
+            });
+
+            $('#close-modal').click(function () {
+                $('#embed-modal').hide(700);
+            })
+        })
+    </script>
+{% endblock %}

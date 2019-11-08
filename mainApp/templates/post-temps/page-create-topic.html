@@ -1,0 +1,41 @@
+{% extends 'other/_extend-page.html' %}
+{% load static %}
+
+{% block head %}
+    <title>BahisTimi - Konu Oluştur</title>
+    <meta name="keywords" content="konu, konu aç, oluştur">
+    <meta name="description" content="Hemen yeni bir konu oluştur.">
+{% endblock %}
+
+{% block body %}
+    <main id="tt-pageContent">
+        <div class="container">
+            <div class="tt-wrapper-inner background-header p-5 mb-3">
+                <h1 class="tt-title-border">
+                    Yeni Konu Oluştur
+                </h1>
+                <form method="post" action="{% url 'create_post' category.slug %}" class="form-default form-create-topic">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="inputTopicTitle">Konu Başlığı</label>
+                        <div class="tt-value-wrapper">
+                            {{ form.title }}
+                            <span class="tt-value-input">MAX 100</span>
+                        </div>
+                    </div>
+                    <div class="pt-editor">
+                        <h6 class="pt-title">Konu İçeriği</h6>
+                        <div class="form-group">
+                            {{ form.body }}
+                        </div>
+                        <div class="row">
+                            <div class="col-auto ml-md-auto">
+                                <button type="submit" class="btn btn-secondary btn-width-lg">Konu Oluştur</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock %}

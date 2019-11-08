@@ -1,0 +1,51 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Forum - Responsive HTML5 Template</title>
+    <meta name="keywords" content="kayıt ol, kaydol, üye ol, üye">
+    <meta name="description" content="BahisTimi üye olma sayfası.">
+    <link rel="shortcut icon" href="/media/logo/favicon.ico">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<main id="tt-pageContent" class="tt-offset-none">
+    <div class="container">
+        <div class="tt-loginpages-wrapper">
+            <div class="tt-loginpages">
+                <a href="{% url 'homepage' %}" class="tt-block-title">
+                    <img src="/media/logo/logo2.svg" alt="">
+                </a>
+                <form method="post" action="{% url 'signup2' %}" class="form-default">
+                    {% csrf_token %}
+                    {% for form in forms %}
+                        <div class="form-group">
+                            <label for="login{{ form.label }}">{{ form.label }}</label>
+                            {{ form }}
+                        </div>
+                        <span style="color: red;">
+                        {% if form.errors %}
+                            {% for error in form.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        </span>
+                    {% endfor %}
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-secondary btn-block">Hesabımı Oluştur</button>
+                    </div>
+                    <p>Zaten üye misin? <a href="{% url 'login2' %}" class="tt-underline">Giriş Yap</a></p>
+                    <div class="tt-notes">
+                        Üye olarak <a href="#" target="_blank" class="tt-underline">Forum kurallarını</a> kabul etmiş sayılırsınız.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

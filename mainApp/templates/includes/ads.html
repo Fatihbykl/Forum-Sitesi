@@ -1,0 +1,25 @@
+{% if request.user.is_authenticated %}
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-12">
+            <div id="advertising">
+                <div class="header">
+                    Sponsor Reklamları
+                </div>
+                <div class="body"></div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div id="advertising">
+        <div class="header">
+            Hoşgeldin!
+        </div>
+        <div class="body2">
+                                <span class="iconify" data-icon="emojione:locked-with-key"
+                                      data-inline="false"></span><br>
+            Foruma hoşgeldiniz. Forumdan tümüyle yararlanabilmek için lütfen <a
+                href="{% url 'login2' %}">giriş yapın.</a> Hesabınız yoksa <a
+                href="{% url 'signup2' %}">buradan</a> üye olabilirsiniz.
+        </div>
+    </div>
+{% endif %}

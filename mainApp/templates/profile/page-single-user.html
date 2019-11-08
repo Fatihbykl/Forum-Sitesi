@@ -1,0 +1,124 @@
+{% extends 'other/_extend-page.html' %}
+
+{% block head %}
+    <title>BahisTimi - {{ profile.username }}</title>
+    <meta name="keywords" content="kullanıcı, üye">
+    <meta name="description" content="{{ profile.username }} kullanıcı adlı kişinin profil sayfası.">
+{% endblock %}
+
+{% block body %}
+    <main id="tt-pageContent" class="tt-offset-small">
+        <div class="tt-wrapper-section">
+            <div class="container">
+                <div class="tt-user-header background-header border-bottom mt-4 p-4">
+                    <div class="tt-col-avatar">
+                        <div class="tt-icon">
+                            <img alt="pp" src="/media/{{ profile.user.photo }}"
+                                 style="width: 50px; height: 50px;border-radius: 50%;">
+                        </div>
+                    </div>
+                    <div class="tt-col-title">
+                        <div class="tt-title">
+                            <a href="#">{{ username }}</a>
+                        </div>
+                        <ul class="tt-list-badge">
+                            <li style="height: 40px;width: 130px;"><a href="#">
+                                <div class="{{ profile.user.user_rank.rank }}"></div>
+                            </a></li>
+                        </ul>
+                    </div>
+                    {% if request.user.username != profile.username %}
+                        <div class="tt-col-btn">
+                            <div class="tt-list-btn">
+                                <a href="{% url 'create_channel' profile.username %}" class="btn btn-primary">Mesaj
+                                    Yolla</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="container Profile">
+            <div class="tt-tab-wrapper">
+                <div class="tt-wrapper-inner">
+                    <ul class="nav nav-tabs pt-tabs-default" role="tablist">
+                        <li class="nav-item show">
+                            <a class="nav-link active" data-toggle="tab" href="{% url 'view_profile' username %}"><span><span
+                                    class="iconify" data-icon="simple-line-icons:info" data-inline="false"></span> Bilgiler</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'view_profile_topics' username %}"><span><span
+                                    class="iconify" data-icon="ant-design:folder-fill" data-inline="false"></span> Konular</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="{% url 'view_profile_replies' username %}"><span><span class="iconify"
+                                                                                            data-icon="fa-solid:reply"
+                                                                                            data-inline="false"></span> Yanıtlar</span></a>
+                        </li>
+                        {% if request.user == profile %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'view_profile_settings' username %}"><span><span
+                                        class="iconify" data-icon="ic:baseline-settings" data-inline="false"></span> Ayarlar</span></a>
+                            </li>
+                        {% endif %}
+                        {% if request.user.username == username and request.user.user.user_rank.delete_user_perm %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'view_profile_admin' username %}">
+                                    <span class="iconify" data-icon="ic:baseline-settings" data-inline="false"></span>
+                                    Admin
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane tt-indent-none  show active" id="tt-tab-01" role="tabpanel">
+                        <div class="tt-topic-list" style="padding-left: 30px;padding-top: 50px;">
+                            <span style="font-weight: bold;color: black;">Hakkında</span>
+                            <hr style="height: 2px;margin-top: 0;">
+                            <table style="margin-bottom: 50px;">
+                                <tr>
+                                    <td>İsim:</td>
+                                    <td>{{ profile.first_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Soyisim:</td>
+                                    <td>{{ profile.last_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Doğum Günü:</td>
+                                    <td>{{ profile.user.birth_day }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Yaş:</td>
+                                    <td>{{ profile.user.get_age }}</td>
+                                </tr>
+                            </table>
+                            <span style="font-weight: bold;color: black;">Aktivite</span>
+                            <hr style="height: 2px;margin-top: 0;">
+                            <table>
+                                <tr>
+                                    <td>Katılım Tarihi:</td>
+                                    <td>{{ profile.date_joined }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Son Hareket:</td>
+                                    <td>{{ profile.last_login }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Mesaj:</td>
+                                    <td>{{ profile.user.get_comment_count }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Puan</td>
+                                    <td>29</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

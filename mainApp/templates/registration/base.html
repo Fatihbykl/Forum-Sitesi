@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/mainApp/media/favicon.ico">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+<!-- tt-mobile menu -->
+<main id="tt-pageContent" class="tt-offset-none">
+    <div class="container">
+        <div class="tt-loginpages-wrapper">
+            <div class="tt-loginpages">
+                <a href="{% url 'homepage' %}" class="tt-block-title">
+                    <img src="/media/logo/logo2.svg" alt="">
+                </a>
+                {% block forms %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</main>
+<script src="js/bundle.js"></script>
+</body>
+</html>

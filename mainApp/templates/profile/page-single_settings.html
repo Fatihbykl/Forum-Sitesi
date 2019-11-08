@@ -1,0 +1,113 @@
+{% extends 'other/_extend-page.html' %}
+
+{% block head %}
+    <meta charset="utf-8">
+    <title>BahisTimi - {{ profile.username }} Ayarlar</title>
+{% endblock %}
+
+{% block body %}
+    <main id="tt-pageContent" class="tt-offset-small">
+        <div class="tt-wrapper-section">
+            <div class="container">
+                <div class="tt-user-header background-header border-bottom mt-4 p-4">
+                    <div class="tt-col-avatar">
+                        <div class="tt-icon">
+                            <img alt="pp" src="/media/{{ profile.user.photo }}"
+                                 style="width: 50px; height: 50px;border-radius: 50%;">
+                        </div>
+                    </div>
+                    <div class="tt-col-title">
+                        <div class="tt-title">
+                            <a href="#">{{ username }}</a>
+                        </div>
+                        <ul class="tt-list-badge">
+                            <li style="height: 40px;width: 130px;"><a href="#">
+                                <div class="{{ profile.user.user_rank.rank }}"></div>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container Profile">
+            <div class="tt-tab-wrapper">
+                <div class="tt-wrapper-inner">
+                    <ul class="nav nav-tabs pt-tabs-default" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link " href="{% url 'view_profile' username %}"><span><span class="iconify"
+                                                                                                      data-icon="simple-line-icons:info"
+                                                                                                      data-inline="false"></span> Bilgiler</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'view_profile_topics' username %}"><span><span
+                                    class="iconify" data-icon="ant-design:folder-fill" data-inline="false"></span> Konular</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="{% url 'view_profile_replies' username %}"><span><span class="iconify"
+                                                                                            data-icon="fa-solid:reply"
+                                                                                            data-inline="false"></span> Yanıtlar</span></a>
+                        </li>
+                        {% if request.user.username == username %}
+                            <li class="nav-item show">
+                                <a class="nav-link active" href="{% url 'view_profile_settings' username %}"><span><span
+                                        class="iconify" data-icon="ic:baseline-settings" data-inline="false"></span> Ayarlar</span></a>
+                            </li>
+                        {% endif %}
+                        {% if request.user.username == username and request.user.user.user_rank.delete_user_perm %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'view_profile_admin' username %}">
+                                    <span class="iconify" data-icon="ic:baseline-settings" data-inline="false"></span>
+                                    Admin
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane tt-indent-none show active" id="tt-tab-04" role="tabpanel">
+                        <div class="tt-followers-list">
+                            <div class="row" style="padding-left: 30px;padding-top: 50px;">
+                                <div class="col-md-4 mb-5">
+                                    <form action="{% url 'change_profile_photo' username %}" method="post"
+                                          enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <span style="font-weight: bold;color: black;">Profil Fotoğrafını Değiştir</span>
+                                        <hr style="height: 2px;margin-top: 0;">
+                                        <img class="img-thumbnail profile-settings-img"
+                                             alt="Profil Fotoğrafı" src="/media/{{ request.user.user.photo }}">
+                                        {{ image_form.photo }}
+                                        <button type="submit" style="width: 100%;" class="btn btn-color01">Yükle
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="col-md-4 mb-5 form-default">
+                                    <span style="font-weight: bold;color: black;">Email Değiştir</span>
+                                    <hr style="height: 2px;margin-top: 0;">
+                                    <form method="post" action="{% url 'change_email' username %}">
+                                        {% csrf_token %}
+                                        Email {{ email_form.email }}
+                                        <button class="btn btn-color01" style="width: 100%;" type="submit">Değiştir
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="col-md-4 form-default">
+                                    <span style="font-weight: bold;color: black;">Şifre Değiştir</span>
+                                    <hr style="height: 2px;margin-top: 0;">
+                                    <form method="post" action="{% url 'change_password' username %}">
+                                        {% csrf_token %}
+                                        Eski Şifre {{ password_form.old_password }}
+                                        Yeni Şifre {{ password_form.new_password1 }}
+                                        Yeni Şifreyi Onaylayın {{ password_form.new_password2 }}
+                                        <button type="submit" class="btn btn-color01" style="width: 100%;">Onayla
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

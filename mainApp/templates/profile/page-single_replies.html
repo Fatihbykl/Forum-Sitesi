@@ -1,0 +1,173 @@
+{% extends 'other/_extend-page.html' %}
+
+{% block head %}
+    <meta charset="utf-8">
+    <title>BahisTimi - {{ profile.username }} Yanıtlar</title>
+    <meta name="description" content="{{ profile.username }} adlı kullanıcının yorumlarını görüntüle.">
+{% endblock %}
+
+{% block body %}
+    <main id="tt-pageContent" class="tt-offset-small">
+        <div class="tt-wrapper-section">
+            <div class="container">
+                <div class="tt-user-header background-header border-bottom mt-4 p-4">
+                    <div class="tt-col-avatar">
+                        <div class="tt-icon">
+                            <img alt="pp" src="/media/{{ profile.user.photo }}"
+                                 style="width: 50px; height: 50px;border-radius: 50%;">
+                        </div>
+                    </div>
+                    <div class="tt-col-title">
+                        <div class="tt-title">
+                            <a href="#">{{ username }}</a>
+                        </div>
+                        <ul class="tt-list-badge">
+                            <li style="height: 40px;width: 130px;"><a href="#">
+                                <div class="{{ profile.user.user_rank.rank }}"></div>
+                            </a></li>
+                        </ul>
+                    </div>
+                    {% if request.user.username != profile.username %}
+                        <div class="tt-col-btn">
+                            <div class="tt-list-btn">
+                                <a href="{% url 'create_channel' profile.username %}" class="btn btn-primary">Mesaj
+                                    Yolla</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="container Profile">
+            <div class="tt-tab-wrapper">
+                <div class="tt-wrapper-inner">
+                    <ul class="nav nav-tabs pt-tabs-default" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link " href="{% url 'view_profile' username %}"><span><span class="iconify"
+                                                                                                      data-icon="simple-line-icons:info"
+                                                                                                      data-inline="false"></span> Bilgiler</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'view_profile_topics' username %}"><span><span
+                                    class="iconify" data-icon="ant-design:folder-fill" data-inline="false"></span> Konular</span></a>
+                        </li>
+                        <li class="nav-item show">
+                            <a class="nav-link active"
+                               href="{% url 'view_profile_replies' username %}"><span><span class="iconify"
+                                                                                            data-icon="fa-solid:reply"
+                                                                                            data-inline="false"></span> Yanıtlar</span></a>
+                        </li>
+                        {% if request.user.username == username %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'view_profile_settings' username %}"><span><span
+                                        class="iconify" data-icon="ic:baseline-settings" data-inline="false"></span> Ayarlar</span></a>
+                            </li>
+                        {% endif %}
+                        {% if request.user.username == username and request.user.user.user_rank.delete_user_perm %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'view_profile_admin' username %}">
+                                    <span class="iconify" data-icon="ic:baseline-settings" data-inline="false"></span>
+                                    Admin
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane tt-indent-none show active" id="tt-tab-03" role="tabpanel">
+                        <div class="tt-topic-list pb-3">
+                            {% for comment in comments %}
+                                <div class="tt-item" style="height: auto;">
+                                    <div class="tt-col-avatar">
+                                        <img alt="pp" class="img-thumbnail" style="width: 50px;height: 50px;"
+                                             src="/media/{{ comment.which_post.publisher.user.photo }}">
+                                    </div>
+                                    <div class="tt-col-description">
+                                        <h6 class="tt-title"><a href="#">
+                                            {{ comment.which_post.title }}
+                                        </a></h6>
+                                        <div class="tt-content">
+                                            {{ comment.comment_text|truncatechars:88 }}
+                                        </div>
+                                    </div>
+                                    <div class="tt-col-category"><a href="#"><span
+                                            class="tt-color06 tt-badge"
+                                            style="background-color: #357CBD;">{{ comment.which_post.category.name }}</span></a>
+                                    </div>
+                                    <div style="width: 200px;"
+                                         class="tt-col-value-large hide-mobile">{{ comment.created_time }}</div>
+                                </div>
+                            {% empty %}
+                                <div style="width: 100%;text-align: center;padding-top: 50px;font-size: 24px;">
+                                    <b>Yanıt Bulunamadı.</b>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% if comments.has_other_pages %}
+                    <div class="wrapper mt-5">
+                        <nav>
+                            <ul class="pager mb-3">
+                                <li class="pager__item pager__item--prev">
+                                    {% if comments.has_previous %}
+                                        <a class="pager__link" href="?page={{ comments.previous_page_number }}">
+                                            &laquo;
+                                        </a>
+                                    {% else %}
+                                        <a class="pager__link">
+                                            &laquo;
+                                        </a>
+                                    {% endif %}
+                                </li>
+                                {% for page in comments.paginator.page_range %}
+                                    {% if comments.number == page %}
+                                        {% if page|add:-3 > 0 %}
+                                            <li class="pager__item"><a class="pager__link">...</a></li>
+                                        {% endif %}
+                                        {% if page|add:-2 > 0 %}
+                                            <li class="pager__item"><a class="pager__link"
+                                                                       href="?page={{ page|add:-2 }}">{{ page|add:-2 }}</a>
+                                            </li>
+                                        {% endif %}
+                                        {% if page|add:-1 > 0 %}
+                                            <li class="pager__item"><a class="pager__link"
+                                                                       href="?page={{ page|add:-1 }}">{{ page|add:-1 }}</a>
+                                            </li>
+                                        {% endif %}
+                                        <li class="pager__item active"><a class="pager__link"
+                                                                          href="?page={{ page }}">{{ page }}</a></li>
+                                        {% if page|add:1 <= comments.paginator.num_pages %}
+                                            <li class="pager__item"><a class="pager__link"
+                                                                       href="?page={{ page|add:1 }}">{{ page|add:1 }}</a>
+                                            </li>
+                                        {% endif %}
+                                        {% if page|add:2 <= comments.paginator.num_pages %}
+                                            <li class="pager__item"><a class="pager__link"
+                                                                       href="?page={{ page|add:2 }}">{{ page|add:2 }}</a>
+                                            </li>
+                                        {% endif %}
+                                        {% if page|add:3 <= comments.paginator.num_pages %}
+                                            <li class="pager__item"><a class="pager__link">...</a></li>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                                <li class="pager__item pager__item--next">
+                                    {% if comments.has_next %}
+                                        <a class="pager__link" href="?page={{ comments.next_page_number }}">
+                                            &raquo;
+                                        </a>
+                                    {% else %}
+                                        <a class="pager__link">
+                                            &raquo;
+                                        </a>
+                                    {% endif %}
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

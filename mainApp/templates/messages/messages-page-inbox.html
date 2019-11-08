@@ -1,0 +1,89 @@
+{% extends 'other/_extend-page.html' %}
+
+{% block head %}
+    <title>BahisTimi - Mesajlar</title>
+    <meta name="description" content="Kullanıcı mesajları">
+{% endblock %}
+
+{% block body %}
+    <main id="tt-pageContent" class="tt-offset-small" style="height: 100%">
+        <div class="container" style="height: 100%;">
+            <div class="tt-messages-layout mt-3" style="background-color: white;height: 100%;">
+                <div class="row no-gutters" style="height: 100%;">
+                    <div class="col-md-4 tt-aside background-header" style="height: 100%;" id="js-aside2">
+                        <div class="tt-all-avatar">
+                            <div class="tt-box-search">
+                                <a href="#" class="tt-title-aside">
+                                    <h2 class="tt-title">
+                                        Mesajlar
+                                    </h2>
+                                </a>
+                                <span class="desktop-hide">
+                                <a href="#" class="tt-btn-icon" style="top: 8px;" id="close-aside">
+                                    <span class="iconify" style="width: 30px;height: 30px;color: black;"
+                                          data-icon="uil:times" data-inline="false"></span>
+                                </a></span>
+                            </div>
+                            <div class="" style="overflow: auto;">
+                                {% for channel in channels %}
+                                    <a href="{% url 'message_detail_inbox' channel.id %}" class="tt-item"
+                                            {% if channel.new_message and channel.get_last_message.receiver == request.user %}
+                                       style="border-right: 2px solid;" {% endif %}>
+                                        <div class="tt-col-avatar">
+                                            {% if channel.first_user != request.user %}
+                                                <img alt="pp" style="width: 50px;height: 50px;border-radius: 50%;"
+                                                     src="/media/{{ channel.first_user.user.photo }}">
+                                            {% else %}
+                                                <img alt="pp" style="width: 50px;height: 50px;border-radius: 50%;"
+                                                     src="/media/{{ channel.second_user.user.photo }}">
+                                            {% endif %}
+                                        </div>
+                                        <div class="tt-col-description">
+                                            <h4 class="tt-title"><span>{% if channel.first_user != request.user %}
+                                                {{ channel.first_user.username }}
+                                            {% else %}
+                                                {{ channel.second_user.username }}
+                                            {% endif %}
+                                            </span> <span class="time">{{ channel.get_last_message.timestamp }}</span>
+                                            </h4>
+                                            <div class="tt-message tt-select">{{ channel.get_last_message.message|truncatechars:30 }}</div>
+                                        </div>
+                                    </a>
+                                {% empty %}
+                                    <a href="#" class="tt-item">
+                                        <div class="tt-col-description">
+                                            <h4 class="tt-title"><span>Hiç mesajınız yok.</span></h4>
+                                        </div>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tt-title-content background-header mb-0">
+                            <a href="#" class="tt-toggle-aside" id="open-aside" style="margin-left: 20px;">
+                                <i class="tt-icon">
+                                    <span style="width: 26px;height: 26px" class="iconify" data-icon="ant-design:left-outline" data-inline="false"></span>
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block js %}
+    <script>
+        $(document).ready(function () {
+            $('#open-aside').click(function () {
+                $('#js-aside2').addClass('column-open');
+            });
+
+            $('#close-aside').click(function () {
+                $('#js-aside2').removeClass('column-open');
+            });
+        })
+    </script>
+{% endblock %}

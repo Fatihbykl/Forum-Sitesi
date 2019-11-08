@@ -1,0 +1,21 @@
+{% if messages %}
+    {% for message in messages %}
+        <div id="alert" class="flag note {{ message.tags }} mt-3">
+            <div class="flag__image note__icon">
+                {% if 'note--success' in message.tags %}
+                    <span class="iconify" data-icon="fa-solid:check" data-inline="false"></span>
+                {% elif 'note--warning' in message.tags %}
+                    <span class="iconify" data-icon="fa:exclamation" data-inline="false"></span>
+                {% elif 'note--error' in message.tags %}
+                    <span class="iconify" data-icon="fa-solid:times" data-inline="false"></span>
+                {% endif %}
+            </div>
+            <div class="flag__body note__text">
+                {{ message }}
+            </div>
+            <a id="close-alert" href="#" class="note__close">
+                <span class="iconify" data-icon="fa-solid:times" data-inline="false"></span>
+            </a>
+        </div>
+    {% endfor %}
+{% endif %}

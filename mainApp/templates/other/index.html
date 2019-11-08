@@ -1,0 +1,249 @@
+{% extends 'other/_extend-page.html' %}
+{% load static %}
+{% block head %}
+    <title>BahisTimi - Ana Sayfa</title>
+    <meta name="keywords" content="bahis forum, bahistimi, deneme bonusu, bonus veren siteler">
+    <meta name="description" content="BahisTimi forumuna hoşgeldin!">
+{% endblock %}
+
+{% block body %}
+    <main id="tt-pageContent" class="tt-offset-small">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-12">
+                    {% if request.user.is_authenticated %}
+                        <div id="advertising">
+                            <div class="header">
+                                Sponsor Reklamları
+                            </div>
+                            <div class="body"></div>
+                        </div>
+                    {% else %}
+                        <div id="advertising">
+                            <div class="header">
+                                Hoşgeldin!
+                            </div>
+                            <div class="body2">
+                                <span class="iconify" data-icon="emojione:locked-with-key"
+                                      data-inline="false"></span><br>
+                                Foruma hoşgeldiniz. Forumdan tümüyle yararlanabilmek için lütfen <a
+                                    href="{% url 'login2' %}">giriş yapın.</a> Hesabınız yoksa <a
+                                    href="{% url 'signup2' %}">buradan</a> üye olabilirsiniz.
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% for category in categories %}
+                        <div id="aspect-content">
+                            <div class="aspect-tab ">
+                                <input id="item-{{ category.id }}" type="checkbox" checked class="aspect-input"
+                                       name="aspect">
+                                <label for="item-{{ category.id }}" class="aspect-label"></label>
+
+                                <div class="aspect-content">
+                                    <div class="aspect-info">
+                                        <div class="chart-pie negative over50">
+                                            <img alt="icon" style="width: 50px;height: 50px;" src="/media/{{ category.image }}">
+                                        </div>
+                                        <span class="aspect-name">{{ category.name }}</span>
+                                    </div>
+                                </div>
+                                <div class="aspect-tab-content">
+                                    <div class="sentiment-wrapper" style="padding: 0;">
+                                        {% for subcategory in category.get_subcategories %}
+                                            <div class="tt-topic-list" style="padding: 0;">
+                                                <div class="tt-item">
+                                                    <div class="tt-col-avatar" style="width: 10%;float: left">
+                                                        <img alt="icon" style="width: 100%;height: 100%;"
+                                                             src="/media/{{ subcategory.image }}">
+                                                    </div>
+                                                    <div class="tt-col-description" style="width:50%;">
+                                                        <h6 class="tt-title">
+                                                            <a href="{% url 'sub_category' subcategory.slug %}">
+                                                                <span class="color-blue bold">
+                                                                    {{ subcategory.name }}
+                                                                </span>
+                                                            </a>
+                                                        </h6>
+                                                        <div class="row align-items-center no-gutters">
+                                                            <div class="col-11">
+                                                                <ul class="tt-list-badge">
+                                                                    <li class="ml-0">
+                                                                        <a>
+                                                                            <span class="tt-badge"
+                                                                                  style="background-color: white">
+                                                                                Konu: <b>{{ subcategory.get_post_count }}</b>
+                                                                            </span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="ml-0">
+                                                                        <a>
+                                                                            <span class="tt-badge"
+                                                                                  style="background-color: white">
+                                                                            Mesaj: <b>{{ subcategory.get_comment_count }}</b>
+                                                                            </span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% if subcategory.get_last_post %}
+                                                        <div class="tt-col-value hide-mobile" style="width: 10%;">
+                                                            <img alt="pp"
+                                                                 style="width: 50px;height: 50px;border-radius: 50%;"
+                                                                 src="/media/{{ subcategory.get_last_post.publisher.user.photo }}">
+                                                        </div>
+                                                        <div style="width: 30%;" class="tt-col-category">
+                                                            <h6 style="font-size: 13px;margin: 0;">{{ subcategory.get_last_post.title|truncatechars:30 }}</h6>
+                                                            <div style="font-size: 13px;color: #9d9d9d">
+                                                                {{ subcategory.get_last_post.created_time.date }}
+                                                                <span class="iconify" data-icon="entypo:dot-single"
+                                                                      data-inline="false" data-width="18px"
+                                                                      data-height="18px"></span>
+                                                                <a href="{% url 'view_profile' subcategory.get_last_post.publisher.username|truncatechars:10 %}">
+                                                                    {{ subcategory.get_last_post.publisher }}
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="statistics border-top-blue">
+                        <img alt="logo" src="/media/logo/bahistimiyazisiz.svg">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <span class="num-stat">{{ all_posts }}</span><br>
+                                <span class="text-stat">KONU</span>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="num-stat">{{ all_comments }}</span><br>
+                                <span class="text-stat">MESAJ</span>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="num-stat">{{ all_users }}</span><br>
+                                <span class="text-stat">ÜYE</span>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="num-stat">{{ last_user.username }}</span><br>
+                                <span class="text-stat">SON ÜYE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    {% if request.user.is_authenticated %}
+                        <div class="sidebar-content" style="margin-top: 50px;">
+                            <div class="sidebar-header">
+                                Profilim
+                            </div>
+                            <div class="sidebar-body">
+                                <div class="sidebar-profile">
+                                    <div style="width: 100%;text-align: center;">
+                                        <img alt="pp" style="width: 100px;height: 100px;" class="img-thumbnail"
+                                             src="/media/{{ request.user.user.photo }}">
+                                        <b>{{ request.user.username }}</b>
+                                        <hr style="margin: 5px 0 0 0;">
+                                    </div>
+                                    <div class="sidebar-profile-info">
+
+                                        <br><b>Mesaj:</b> <span
+                                            style="float: right;">{{ request.user.user.get_comment_count }}</span>
+                                        <br><b>Rütbe:</b> <span
+                                            style="float: right;font-size: 12px;">{{ request.user.user.user_rank.get_rank_display }}</span>
+                                        <br><b>Puan:</b> <span
+                                            style="float: right;">{{ request.user.user.point }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if request.user.is_authenticated %}
+                        <div class="sidebar-content">
+                            <div class="sidebar-header">
+                                Reklam Alanı
+                            </div>
+                            <div class="sidebar-body" style="height: 200px;">
+                                <div class="marquee">
+                                    <div>
+                                        <div>
+                                        <span class="iconify"
+                                              data-icon="entypo:megaphone" data-inline="false"></span>
+                                            5$ Free Bet
+                                        </div>
+                                        <div>
+                                        <span class="iconify"
+                                              data-icon="entypo:megaphone" data-inline="false"></span>
+                                            5$ Free Bet
+                                        </div>
+                                        <div class="div3">
+                                        <span class="iconify"
+                                              data-icon="entypo:megaphone" data-inline="false"></span>
+                                            5$ Free Bet
+                                        </div>
+                                        <div class="div3">
+                                        <span class="iconify"
+                                              data-icon="entypo:megaphone" data-inline="false"></span>
+                                            5$ Free Bet
+                                        </div>
+                                        <div class="div3">
+                                        <span class="iconify"
+                                              data-icon="entypo:megaphone" data-inline="false"></span>
+                                            5$ Free Bet
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar-content">
+                            <div class="sidebar-header">
+                                Reklam Alanı
+                            </div>
+                            <div class="sidebar-body">
+                                <iframe allowtransparency="true"
+                                        src="https://media.winaffiliates.com/ad.aspx?bid=3665&pid=1705973" width="300"
+                                        height="600" marginwidth="0" marginheight="0" hspace="0" vspace="0"
+                                        frameborder="0" scrolling="no"></iframe>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="sidebar-content">
+                        <div class="sidebar-header">
+                            Bu Sayfayı Paylaş
+                        </div>
+                        <div class="sidebar-body p-3">
+                            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+                               data-size="large" data-show-count="false">Tweetle</a><br>
+                            <div class="fb-share-button" data-href="{{ request.get_absolute_uri }}"
+                                 data-layout="button" data-size="large"><a target="_blank"
+                                                                           href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                                                                           class="fb-xfbml-parse-ignore">Paylaş</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-content">
+                        <div class="sidebar-header">
+                            Twitter
+                        </div>
+                        <div class="sidebar-body">
+                            <a class="twitter-timeline" data-lang="tr" data-height="500" data-theme="light"
+                               href="https://twitter.com/FatihBaykal11?ref_src=twsrc%5Etfw">Tweets by FatihBaykal11</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block js %}
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v5.0"></script>
+{% endblock %}

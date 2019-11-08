@@ -1,0 +1,143 @@
+{% extends 'other/_extend-page.html' %}
+
+{% block head %}
+    <title>BahisTimi - Mesajlar</title>
+    <meta name="description" content="Kullanıcı mesajları">
+{% endblock %}
+
+{% block body %}
+    <main id="tt-pageContent" class="tt-offset-small">
+        <div class="container" style="height: 100%;">
+            <div class="tt-messages-layout mt-3" style="height: 100%;border: 1px solid #DFDFDF">
+                <div class="row no-gutters">
+                    <div class="col-md-4 tt-aside height-mobile" style="background-color: white;" id="js-aside2">
+                        <div class="tt-all-avatar">
+                            <div class="tt-box-search">
+                                <a href="#" class="tt-title-aside background-header">
+                                    <h2 class="tt-title">
+                                        Mesajlar
+                                    </h2>
+                                </a>
+                                <span class="desktop-hide">
+                                <a href="#" class="tt-btn-icon" style="top: 8px;" id="close-aside">
+                                    <span class="iconify" style="width: 30px;height: 30px;color: black;"
+                                          data-icon="uil:times" data-inline="false"></span>
+                                </a></span>
+                            </div>
+                            <div style="overflow: auto;max-height: 533px;">
+                                {% for channel in channels %}
+                                    <a href="{% url 'message_detail_inbox' channel.id %}"
+                                            {% if channel.new_message and channel.get_last_message.receiver == request.user %}
+                                       style="border-right: 2px solid;" {% endif %}
+                                       class="tt-item">
+                                        <div class="tt-col-avatar">
+                                            {% if channel.first_user != request.user %}
+                                                <img alt="pp" style="width: 50px;height: 50px;border-radius: 50%;"
+                                                     src="/media/{{ channel.first_user.user.photo }}">
+                                            {% else %}
+                                                <img alt="pp" style="width: 50px;height: 50px;border-radius: 50%;"
+                                                     src="/media/{{ channel.second_user.user.photo }}">
+                                            {% endif %}
+                                        </div>
+                                        <div class="tt-col-description">
+                                            <h4 class="tt-title">
+                                                <span>
+                                                {% if channel.first_user != request.user %}
+                                                    {{ channel.first_user.username }}
+                                                {% else %}
+                                                    {{ channel.second_user.username }}
+                                                {% endif %}
+                                                </span>
+                                                <span class="time">{{ channel.get_last_message.timestamp }}</span>
+                                            </h4>
+                                            <div class="tt-message tt-select">{{ channel.get_last_message.message|truncatechars:30 }}</div>
+                                        </div>
+                                    </a>
+                                {% empty %}
+                                    <a href="#" class="tt-item">
+                                        <div class="tt-col-description">
+                                            <h4 class="tt-title"><span>Hiç mesajınız yok.</span></h4>
+                                        </div>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8" style="background-color: white">
+                        <div class="tt-title-content background-header mb-0">
+                            <a href="#" class="tt-toggle-aside" id="open-aside" style="margin-left: 20px;">
+                                <i class="tt-icon">
+                                    <span style="width: 26px;height: 26px" class="iconify"
+                                          data-icon="ant-design:left-outline" data-inline="false"></span>
+                                </i>
+                            </a>
+                            <h2 class="tt-title">
+                                {{ message.sender.username }}
+                            </h2>
+                            <a href="#" class="tt-icon-link">
+                                <i class="tt-icon">
+                                    <svg class="icon">
+                                        <use href="#notification"></use>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
+                        <div class="tt-list-time-topic background-header message-box"
+                             id="messageBody">
+                            {% for message in Messages %}
+                                <div class="tt-item">
+                                    <div class="tt-col-avatar">
+                                        <img alt="pp" style="width: 50px;height: 50px;border-radius: 50%;"
+                                             src="/media/{{ message.sender.user.photo }}">
+                                    </div>
+                                    <div class="tt-col-description">
+                                        <h4 class="tt-title"><a href="#">{{ message.sender.username }}</a> <span
+                                                class="time">{{ message.timestamp }}</span>
+                                        </h4>
+                                        <p>{{ message.message }}</p>
+                                    </div>
+                                </div>
+                            {% empty %}
+                                <div class="tt-item mb-5 text-center" style="width: 100%;">
+                                    Bu konuşmada hiç mesaj yok.
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="tt-wrapper-inner">
+                            <div class="pt-editor form-default">
+                                <form method="post" action="{% url 'send_message' id %}">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        {{ form.message }}
+                                    </div>
+                                    <div class="pt-row">
+                                        <div class="col-auto ml-auto">
+                                            <button type="submit" class="btn btn-secondary btn-custom">Gönder</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block js %}
+    <script>
+        $(document).ready(function () {
+            var messageBody = document.querySelector('#messageBody');
+            messageBody.scrollTop = messageBody.scrollHeight - messageBody.clientHeight;
+
+            $('#open-aside').click(function () {
+                $('#js-aside2').addClass('column-open');
+            });
+
+            $('#close-aside').click(function () {
+                $('#js-aside2').removeClass('column-open');
+            });
+        });
+    </script>
+{% endblock %}
