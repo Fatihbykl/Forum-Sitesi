@@ -19,14 +19,12 @@ class Ranks(models.Model):
     )
     rank                = models.PositiveSmallIntegerField(choices=ROLES, default=1)
     delete_user_perm    = models.BooleanField(default=0, verbose_name='Üye Silme')
-    category_perm       = models.BooleanField(default=0, verbose_name='Kategori Açma/Kapama')
     delete_post_perm    = models.BooleanField(default=0, verbose_name='Konu Silme')
     post_lock_perm      = models.BooleanField(default=0, verbose_name='Konu Kilitleme/Açma')
     pin_perm            = models.BooleanField(default=0, verbose_name='Konu Sabitleme')
     edit_post_perm      = models.BooleanField(default=0, verbose_name='Konu Düzenleme (Başkasının)')
     edit_comments_perm  = models.BooleanField(default=0, verbose_name='Mesaj Düzenleme (Başkasının)')
     del_comments_perm   = models.BooleanField(default=0, verbose_name='Mesaj Silme (Başkasının)')
-    color_text_perm     = models.BooleanField(default=0, verbose_name='Renkli Yazı')
 
     class Meta:
         verbose_name_plural = 'Rütbeler'

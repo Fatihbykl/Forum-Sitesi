@@ -92,7 +92,8 @@
                                 <a href="{% url 'edit_post' post.slug %}"
                                    class="tt-icon-btn tt-hover-02 tt-small-indent float-right m-0">
                                     <span class="color-green hover-green tt-small-indent">
-                                        <span class="iconify user-panel-icon" data-icon="fa-solid:edit" data-inline="false"></span>
+                                        <span class="iconify user-panel-icon" data-icon="fa-solid:edit"
+                                              data-inline="false"></span>
                                     </span>
                                 </a>
                             {% endif %}
@@ -156,7 +157,8 @@
                                     <a href="{% url 'edit_comment' comment.id %}"
                                        class="tt-icon-btn tt-hover-02 tt-small-indent float-right m-0">
                                     <span class="color-green hover-green tt-small-indent">
-                                        <span class="iconify user-panel-icon" data-icon="fa-solid:edit" data-inline="false"></span>
+                                        <span class="iconify user-panel-icon" data-icon="fa-solid:edit"
+                                              data-inline="false"></span>
                                     </span>
                                     </a>
                                 {% endif %}
@@ -269,6 +271,7 @@
                 <h4 class="tt-title-separator mt-2 mb-2" style="z-index: 1;">
                     <span style="background-color: white">Yorum Yap</span>
                 </h4>
+                <p id="info-embed" class="mb-0 color-green"></p>
                 <div class="pt-editor form-default">
                     {% if request.user.is_authenticated %}
                         {% if not post.is_locked %}
@@ -277,10 +280,12 @@
                                     <div>
                                         <h5 class="bold">Tweet Ekle</h5>
                                         Embed Kodu:
-                                        <input aria-label="embed" name="embed-input" type="text">
+                                        <input id="embed-input" aria-label="embed" name="embed-input" type="text">
                                         <p class="mt-3">Lütfen girdiğiniz linkin embed kodu olduğundan emin olun.
-                                            <a href="https://publish.twitter.com/">Buradan</a> tweet linkini embed
+                                            <a target="_blank" href="https://publish.twitter.com/">Buradan</a> tweet
+                                            linkini embed
                                             koduna çevirebilirsiniz.</p>
+                                        <p>Boş bırakırsanız kod eklenmeyecektir.</p>
                                         <button id="close-modal" class="btn btn-color02 mt-3" type="button">Tamam
                                         </button>
                                     </div>
@@ -382,7 +387,14 @@
 
             $('#close-modal').click(function () {
                 $('#embed-modal').hide(700);
-            })
+                var input = $('#embed-input');
+                var p = $('#info-embed');
+                if (input.val().length > 0) {
+                    p.text('Kodunuz Eklendi.')
+                }else {
+                    p.text('');
+                }
+            });
         })
     </script>
 {% endblock %}

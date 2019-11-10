@@ -177,7 +177,6 @@
     height: 44px;
     width: 44px;
     border-radius: 50%;
-    background-color: #e4e4e4;
     vertical-align: middle;
 }
 
@@ -389,10 +388,8 @@
 
 #advertising .body {
     width: 100%;
-    height: 600px;
-    background-image: url("/media/bg-stadium.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 260px;
+   background-color: white;
 }
 
 #advertising .body2 {
@@ -492,6 +489,7 @@
     position: absolute;
     min-width: 250px;
     min-height: 200px;
+    margin-left: -100px;
     background-color: white;
     border-top: 2px solid #2196F3;
     z-index: 20;
@@ -665,11 +663,13 @@ input[type="file"]::-ms-browse {
     min-width: 300px;
     height: 333px;
     background-color: white;
-    padding: 8px 16px;
     z-index: 20;
     -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6);
     -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6);
+    padding: 0;
+    margin-left: -200px;
+    overflow: auto;
 }
 
 .notif-ul {
@@ -839,6 +839,26 @@ input[type="file"]::-ms-browse {
     }
 
     [class='6'] {
+        width: 150px;
+    }
+
+    [class='5'] {
+        width: 150px;
+    }
+
+    [class='4'] {
+        width: 150px;
+    }
+
+    [class='3'] {
+        width: 150px;
+    }
+
+    [class='2'] {
+        width: 150px;
+    }
+
+    [class='1'] {
         width: 150px;
     }
 
@@ -1307,3 +1327,17 @@ body {
 }
 
 /* End Alerts */
+
+@media screen and (max-width: 376px) {
+    .icons {
+        justify-content: center;
+    }
+
+    .dropdown-content-notif {
+        margin-left: -130px;
+    }
+
+    .dropdown-content {
+        margin-left: -50px;
+    }
+}

@@ -51,7 +51,7 @@
                         <ul>
                             <li>
                                 <a href="{% url 'homepage' %}">
-                                <span>
+                                <span id="homepage">
                                     Forumlar
                                 </span>
                                 </a>
@@ -61,7 +61,7 @@
                     </nav>
                 </div>
             </div>
-            <div class="col-auto ml-auto">
+            <div class="col-auto ml-auto icons">
                 {% if request.user.is_authenticated %}
                     <div class="tt-user-info d-flex justify-content-center">
                         <div class="tt-avatar-icon tt-size-md">
@@ -74,7 +74,7 @@
                                         <span class="mobile-hide">{{ request.user.username }}</span>
                                     </span>
                                 </a>
-                                <div class="dropdown-content" style="margin-left: -100px;">
+                                <div class="dropdown-content">
                                     <div>
                                         <div class="header-profile background-header">
                                             <img alt="Profil Fotoğrafı"
@@ -136,7 +136,6 @@
                                 </span>
 
                                     <div class="dropdown-content-notif"
-                                         style="padding: 0; min-width: 300px;margin-left: -200px;overflow: auto;"
                                          id="notif-content">
 
                                         <div class="notif-header border-top-blue color-blue bold background-header pl-3 pr-3"
@@ -254,7 +253,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-3 col-lg-3">
                 <a><span class="iconify" data-icon="simple-icons:facebook" data-inline="false"></span></a>
-                <a><span class="iconify" data-icon="ant-design:twitter-circle-fill" data-inline="false"></span></a>
+                <a href="https://twitter.com/BahisTimicom" target="_blank"><span class="iconify" data-icon="ant-design:twitter-circle-fill" data-inline="false"></span></a>
                 <a><span class="iconify" data-icon="entypo-social:instagram-with-circle" data-inline="false"></span></a>
             </div>
             <div class="col-sm-12 col-md-9 col-lg-9">

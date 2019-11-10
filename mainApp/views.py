@@ -25,7 +25,7 @@ def homepage(request):
     posts = Post.objects.all()
     comments = Comments.objects.all().count()
     users = User.objects.all()
-    last_user = users.order_by('date_joined').first()
+    last_user = users.order_by('-date_joined').first()
     return render(request, template_name='other/index.html',
                   context={'categories': category, 'posts': posts, 'subcategories': subcategories,
                            'all_posts': posts.count(), 'all_comments': comments, 'all_users': users.count(),
@@ -168,7 +168,6 @@ def reply_to_comment(request, slug, id):
                         extra_tag='reply')
         return HttpResponseRedirect(reverse('single_topic', kwargs={'slug': slug}))
     else:
-        messages.add_message(request, messages.ERROR, 'Yorum yaparken bir hata oluştu.', extra_tags='note--error')
         return render(request, 'post-temps/reply_comments.html',
                       context={'id': id, 'commentForm': form, 'reply': reply})
 
@@ -221,6 +220,8 @@ def delete_comment(request, id):
     post_slug = comment.which_post.slug
     if request.user == comment.who_comment or request.user.user.user_rank.del_comments_perm:
         comment.delete()
+        comment.who_comment.user.point -= COMMENT_POINT
+        comment.who_comment.user.save()
         messages.add_message(request, messages.SUCCESS, 'Yorum başarıyla silindi.', extra_tags='note--success')
         return HttpResponseRedirect(reverse('single_topic', kwargs={'slug': post_slug}))
     else:
@@ -295,11 +296,13 @@ def send_contact(request):
         name = form.cleaned_data['name']
         mail_text = '### İsim: %s -*- Email: %s ### %s' % (name, email, text)
         form.save()
+        """
         try:
             send_mail(topic, mail_text, 'fatihbykl5454@gmail.com', ['fatih.baykal54@hotmail.com'])
         except BadHeaderError:
             messages.add_message(request, messages.ERROR, 'Geçersiz header bulundu.', extra_tags='note--error')
             return HttpResponseRedirect(reverse('contact'))
+        """
         messages.add_message(request, messages.SUCCESS, 'Bizimle iletişime geçtiğin için teşekkürler!',
                              extra_tags='note--success')
         return HttpResponseRedirect(reverse('homepage'))

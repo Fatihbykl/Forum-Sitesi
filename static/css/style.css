@@ -6565,7 +6565,7 @@ hr {
     padding-bottom: 20px;
 }
 
-.tt-desktop-menu nav > ul > li > a span:before, .header-signup-span:before {
+.tt-desktop-menu nav > ul > li > a:hover span:before, .header-signup-span:before {
     content: '';
     display: block;
     position: absolute;
