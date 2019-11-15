@@ -1,9 +1,9 @@
 {% extends 'other/_extend-page.html' %}
 {% load static %}
 {% block head %}
-    <title>BahisTimi - Ana Sayfa</title>
-    <meta name="keywords" content="bahis forum, bahistimi, deneme bonusu, bonus veren siteler">
-    <meta name="description" content="BahisTimi forumuna hoşgeldin!">
+    <title>Best Analiz - Ana Sayfa</title>
+    <meta name="keywords" content="bahis forum, bahis analiz, deneme bonusu, bonus veren siteler">
+    <meta name="description" content="Best Analiz forumuna hoşgeldin!">
 {% endblock %}
 
 {% block body %}
@@ -131,7 +131,8 @@
                                 <span class="text-stat">ÜYE</span>
                             </div>
                             <div class="col-lg-3">
-                                <span class="num-stat">{{ last_user.username }}</span><br>
+                                <a href="{% url 'view_profile' last_user.username %}"><span
+                                        class="num-stat">{{ last_user.username }}</span></a><br>
                                 <span class="text-stat">SON ÜYE</span>
                             </div>
                         </div>

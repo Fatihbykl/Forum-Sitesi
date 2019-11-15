@@ -236,9 +236,10 @@ def message_detail_inbox(request, id):
     channel = get_object_or_404(Channel, id=id)
     channels = Channel.objects.filter(Q(first_user=request.user) | Q(second_user=request.user))
     messages = Messages.objects.filter(channel_id=id)
-    if messages.last().sender != request.user and channel.new_message:
-        channel.new_message = False
-        channel.save()
+    if messages.exists():
+        if messages.last().sender != request.user and channel.new_message:
+            channel.new_message = False
+            channel.save()
     return render(request, template_name='messages/message-detail-inbox.html',
                   context={'Messages': messages, 'channels': channels, 'form': form, 'id': id})
 
@@ -272,8 +273,10 @@ def send_message(request, id):
 def create_channel(request, username):
     if request.user.username == username:
         return HttpResponseBadRequest()
-    channels = Channel.objects.filter((Q(first_user=request.user) and Q(first_user__username=username)) | (
-            Q(second_user=request.user) and Q(first_user__username=username)))
+    channels = Channel.objects.filter(
+        (Q(first_user=request.user) and Q(second_user__username=username)) or
+        (Q(second_user=request.user) and Q(first_user__username=username))
+    )
     if channels.exists():
         return HttpResponseRedirect(reverse('message_detail_inbox', kwargs={'id': channels.first().id}))
     else:

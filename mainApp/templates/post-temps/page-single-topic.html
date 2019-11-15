@@ -3,7 +3,7 @@
 {% load hitcount_tags %}
 
 {% block head %}
-    <title>BahisTimi - {{ post.title }}</title>
+    <title>Best Analiz - {{ post.title }}</title>
     <meta name="description" content="{{ post.body }}">
 {% endblock %}
 
@@ -114,7 +114,7 @@
                                          src="/media/{{ post.publisher.user.photo }}">
                                 </div>
                                 <div class="user-info text-center">
-                                    <span>{{ post.publisher.username }}</span>
+                                    <a href="{% url 'view_profile' post.publisher.username %}"><span>{{ post.publisher.username }}</span></a>
                                     <div class="{{ post.publisher.user.user_rank.rank }}"></div>
                                 </div>
                                 <div class="user-extra-info">
@@ -183,7 +183,7 @@
                                              src="/media/{{ comment.who_comment.user.photo }}">
                                     </div>
                                     <div class="user-info text-center">
-                                        <span>{{ comment.who_comment.username }}</span>
+                                        <a href="{% url 'view_profile' comment.who_comment.username %}"><span>{{ comment.who_comment.username }}</span></a>
                                         <div class="{{ comment.who_comment.user.user_rank.rank }}"></div>
                                     </div>
                                     <div class="user-extra-info">
@@ -209,7 +209,7 @@
                                                              src="/media/{{ comment.reply.who_comment.user.photo }}">
                                                     </div>
                                                     <div class="topic-inner-title"><a
-                                                            href="#"><b>{{ comment.reply.who_comment.username }}</b></a>
+                                                            href="{% url 'view_profile' comment.reply.who_comment.username %}"><b>{{ comment.reply.who_comment.username }}</b></a>
                                                     </div>
                                                 </div>
                                                 <div class="topic-inner-description" style="word-break: break-word;">
