@@ -1,0 +1,22 @@
+{% extends 'other/_extend-page.html' %}
+
+{% block head %}
+    <title>Best Analiz - İletişim</title>
+    <meta name="keywords" content="iletişim, reklam, sponsorluk, mesaj">
+    <meta name="description" content="Reklam & Sponsorluk için bizimle iletişime geçin.">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% include 'includes/ads.html' %}
+        <div class="tt-single-topic-list" style="margin-top: 50px;">
+            <div class="tt-item" style="padding-bottom: 12px;">
+                <div class="tt-single-topic form-default" style="border-top: 2px solid #3AB0AA;">
+                    <span style="font-weight: bold;color: black;font-size: 18px;">Forum Kuralları</span><small class="ml-3">Son Güncelleme: {{ rules.update_time }}</small>
+                    <hr style="height: 2px;margin-top: 0;">
+                    <p>{{ rules.text|safe|linebreaks }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

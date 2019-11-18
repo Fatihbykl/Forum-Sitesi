@@ -116,7 +116,8 @@ def view_profile_settings(request, username):
 
 
 def view_profile_admin(request, username):
-    return render(request, template_name='profile/page-admin.html', context={'username': username})
+    roles = Ranks.objects.all()
+    return render(request, template_name='profile/page-admin.html', context={'username': username, 'roles': roles})
 
 
 def set_user_inactive(request):
@@ -168,6 +169,28 @@ def set_user_active(request):
     else:
         return HttpResponseBadRequest()
 
+
+def change_role(request):
+    if not request.user.user.user_rank.rank == 6:
+        return HttpResponseForbidden()
+    if request.method == 'POST':
+        username = request.POST.get('username-role')
+        rank = request.POST.get('role-select')
+        rank_obj = get_object_or_404(Ranks, rank=rank)
+        user = User.objects.filter(username=username).first()
+        if user:
+            user.user.user_rank = rank_obj
+            user.user.save()
+            msg = '%s kullanıcının rütbesi değiştirildi.' % username
+            messages.add_message(request, messages.SUCCESS, msg, extra_tags='note--success')
+            return HttpResponseRedirect(reverse('view_profile_admin', kwargs={'username': request.user.username}))
+        else:
+            msg = '%s adlı kullanıcı mevcut değil.' % username
+            messages.add_message(request, messages.ERROR, msg, extra_tags='note--error')
+            return HttpResponseRedirect(reverse('view_profile_admin', kwargs={'username': request.user.username}))
+
+    else:
+        return HttpResponseBadRequest()
 
 @login_required(login_url='/kullanici/giris-yap/')
 def change_profile_photo(request, username):

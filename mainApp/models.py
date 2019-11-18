@@ -12,7 +12,7 @@ def upload_to_directory(instance, filename):
 class SubCategory(models.Model):
     name = models.CharField(default=1, max_length=50)
     slug = models.SlugField(max_length=50, editable=False)
-    image = models.ImageField(blank=False, upload_to=upload_to_directory, null=True)
+    image = models.ImageField(blank=False, upload_to=upload_to_directory, default='logo/bestanaliz.png')
 
     class Meta:
         verbose_name_plural = "Alt Kategoriler"
@@ -55,7 +55,7 @@ class Category(models.Model):
     name = models.CharField(default=1, max_length=50)
     slug = models.SlugField(max_length=50, editable=False)
     sub_category = models.ManyToManyField(SubCategory, related_name='sub_category')
-    image = models.ImageField(blank=False, upload_to=upload_to_directory, null=True)
+    image = models.ImageField(blank=False, upload_to=upload_to_directory, default='logo/bestanaliz.png')
 
     class Meta:
         verbose_name_plural = "Kategoriler"
@@ -184,3 +184,18 @@ class Contact(models.Model):
 
     def __str__(self):
         return '%s - %s' % (self.email, self.topic)
+
+
+class ForumRules(models.Model):
+    text = models.TextField(max_length=10000, blank=False)
+    update_time = models.DateTimeField(default=now(), editable=False)
+
+    class Meta:
+        verbose_name_plural = 'Forum Kuralları'
+
+    def __str__(self):
+        return 'Kurallar'
+
+    def save(self, *args, **kwargs):
+        self.update_time = now()
+        super(ForumRules, self).save(*args, **kwargs)

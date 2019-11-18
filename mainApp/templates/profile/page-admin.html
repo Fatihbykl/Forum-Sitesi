@@ -72,7 +72,7 @@
                     <div class="tab-pane tt-indent-none show active" id="tt-tab-04" role="tabpanel">
                         <div class="tt-followers-list">
                             <div class="row" style="padding-left: 30px;padding-top: 50px;">
-                                <div class="col-md-6 mb-5 form-default">
+                                <div class="col-md-4 mb-5 form-default">
                                     <form action="{% url 'set_user_inactive' %}" method="post">
                                         {% csrf_token %}
                                         <span style="font-weight: bold;color: black;">Hesap Askıya Al</span>
@@ -84,7 +84,7 @@
                                         </button>
                                     </form>
                                 </div>
-                                <div class="col-md-6 mb-5 form-default">
+                                <div class="col-md-4 mb-5 form-default">
                                     <span style="font-weight: bold;color: black;">Hesap Etkinleştir</span>
                                     <hr style="height: 2px;margin-top: 0;">
                                     <form method="post" action="{% url 'set_user_active' %}">
@@ -93,6 +93,23 @@
                                         <input aria-label="username-ac" name="username-active" type="text"
                                                class="form-control mb-3">
                                         <button class="btn btn-color01" style="width: 25%;" type="submit">Aktifleştir
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="col-md-4 mb-5 form-default">
+                                    <span style="font-weight: bold;color: black;">Rütbe Değiştir</span>
+                                    <hr style="height: 2px;margin-top: 0;">
+                                    <form method="post" action="{% url 'change_role' %}">
+                                        {% csrf_token %}
+                                        Kullanıcı Adı
+                                        <input aria-label="username-role" name="username-role" type="text"
+                                               class="form-control mb-3">
+                                        <select aria-label="role" class="form-control mb-3" name="role-select">
+                                            {% for role in roles %}
+                                                <option value="{{ role.rank }}">{{ role.get_rank_display }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <button class="btn btn-color01" style="width: 25%;" type="submit">Değiştir
                                         </button>
                                     </form>
                                 </div>

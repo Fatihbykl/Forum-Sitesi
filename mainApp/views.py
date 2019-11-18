@@ -1,9 +1,9 @@
 from .forms import PostForm, CommentForm, ContactForm
-from .models import Category, Post, SubCategory, Comments, LikePost, LikeComment
+from .models import Category, Post, SubCategory, Comments, LikePost, LikeComment, ForumRules
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, reverse
 from django.http import HttpResponseBadRequest, HttpResponseForbidden, HttpResponse
 from django.contrib import messages
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import BadHeaderError
 from notifications.signals import notify
 from notifications.models import Notification
 from notifications.utils import slug2id
@@ -13,6 +13,9 @@ from django.contrib.auth.models import User
 from hitcount.models import HitCount
 from hitcount.views import HitCountMixin
 from django.db.models import Q
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import get_template
+from django.template.loader import render_to_string
 
 LIKE_POINT = 4
 GET_LIKE_POINT = 10
@@ -291,18 +294,24 @@ def send_contact(request):
     form = ContactForm(data=request.POST or None)
     if form.is_valid():
         email = form.cleaned_data['email']
-        topic = form.cleaned_data['topic']
+        topic = "BestAnaliz İletişim | " + form.cleaned_data['topic']
         text = form.cleaned_data['text']
         name = form.cleaned_data['name']
-        mail_text = '### İsim: %s -*- Email: %s ### %s' % (name, email, text)
         form.save()
-        """
+
+        d = {'name': name, 'email': email, 'content': text}
+
+        plaintext = render_to_string('contact_mail/subject.txt')
+        htmly = render_to_string('contact_mail/content.html', d)
+
         try:
-            send_mail(topic, mail_text, 'fatihbykl5454@gmail.com', ['fatih.baykal54@hotmail.com'])
+            msg = EmailMultiAlternatives(topic, 'info@bestanaliz.com', plaintext, ['Bestanaliz@outlook.com'])
+            msg.attach_alternative(htmly, 'text/html')
+            msg.send()
         except BadHeaderError:
             messages.add_message(request, messages.ERROR, 'Geçersiz header bulundu.', extra_tags='note--error')
             return HttpResponseRedirect(reverse('contact'))
-        """
+
         messages.add_message(request, messages.SUCCESS, 'Bizimle iletişime geçtiğin için teşekkürler!',
                              extra_tags='note--success')
         return HttpResponseRedirect(reverse('homepage'))
@@ -323,3 +332,8 @@ def delete_notification(request, slug):
 def mark_as_read(request):
     request.user.notifications.mark_all_as_read()
     return HttpResponse('okundu')
+
+
+def forum_rules(request):
+    rules = ForumRules.objects.all().first()
+    return render(request, template_name='other/page-rules.html', context={'rules': rules})

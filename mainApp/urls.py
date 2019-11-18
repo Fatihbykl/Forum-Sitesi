@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import homepage, create_post, sub_category, single_topic, make_comment, pin_post, delete_post, \
     delete_comment, lock_post, like_post, contact, send_contact, like_comment, delete_notification, reply_to_comment, \
-    edit_post, edit_comment, search, mark_as_read
+    edit_post, edit_comment, search, mark_as_read, forum_rules
 
 urlpatterns = [
     path('', homepage, name='homepage'),
@@ -23,4 +23,5 @@ urlpatterns = [
     path('bildirim/<slug>/sil/', delete_notification, name='delete_notification'),
     path('gonderi/ara/<slug>', search, name='search'),
     path('bildirim-okundu/', mark_as_read, name='mark_as_read'),
+    path('kurallar/', forum_rules, name='forum_rules'),
 ]

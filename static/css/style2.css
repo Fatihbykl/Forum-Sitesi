@@ -388,8 +388,16 @@
 
 #advertising .body {
     width: 100%;
-    height: 260px;
-   background-color: white;
+    height: 360px;
+    background-color: white;
+    overflow: auto;
+}
+
+#advertising .body iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
 }
 
 #advertising .body2 {
@@ -1341,3 +1349,4 @@ body {
         margin-left: -50px;
     }
 }
+
