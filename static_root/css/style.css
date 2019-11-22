@@ -367,10 +367,6 @@ template {
     display: none;
 }
 
-[hidden] {
-    display: none !important;
-}
-
 /*!
  * Bootstrap Grid v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -5598,7 +5594,6 @@ html.win.ie body.no-scroll #tt-header {
     .container-fluid,
     .container {
         padding-right: 10px;
-        padding-left: 10px;
     }
 
     > .row {
@@ -6323,7 +6318,6 @@ hr {
 	Header
 */
 #tt-header {
-    position: fixed;
     top: 0;
     width: 100%;
     background-color: #ffffff;
@@ -6341,6 +6335,7 @@ hr {
     display: -ms-flexbox;
     display: flex;
 }
+
 
 @media (min-width: 1025px) {
     #tt-header > [class^="container"] {
@@ -6569,7 +6564,7 @@ hr {
     padding-bottom: 20px;
 }
 
-.tt-desktop-menu nav > ul > li > a span:before, .header-signup-span:before {
+.tt-desktop-menu nav > ul > li > a:hover span:before, .header-signup-span:before {
     content: '';
     display: block;
     position: absolute;
@@ -7289,11 +7284,11 @@ hr {
 /*---------------------------------------*/
 /*-------  3.1 Basic settings for page content  --------*/
 #tt-pageContent:not([class^="tt-offset"]) {
-    padding-top: 100px;
+
 }
 
 #tt-pageContent.tt-offset-small {
-    padding-top: 70px;
+
 }
 
 @media (max-width: 575px) {
@@ -9477,7 +9472,7 @@ html.ie.gecko body.modal-open {
 }
 
 #tt-pageContent {
-    height: 100%;
+    height: auto;
 }
 
 /*-------  3.9 Editor  ---                         -----*/
@@ -9777,16 +9772,6 @@ html.ie.gecko body.modal-open {
     padding-bottom: 23px;
     margin-bottom: 21px;
     display: block;
-}
-
-.tt-loginpages .tt-block-title:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 160px;
-    height: 1px;
-    background-color: #e2e7ea;
 }
 
 .tt-loginpages .tt-block-title .tt-title {
@@ -10647,6 +10632,7 @@ html.ie.gecko body.modal-open {
 
     .tt-messages-layout .tt-aside.column-open {
         left: 0;
+        right: 0;
     }
 }
 
@@ -11336,4 +11322,8 @@ html.ie.gecko body.modal-open {
     transform: rotate(45deg);
 }
 
-
+@media screen and (max-width: 426px) {
+    .height-mobile {
+        height: 100%;
+    }
+}

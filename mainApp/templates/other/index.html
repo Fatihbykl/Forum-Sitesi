@@ -112,8 +112,9 @@
                                                                 <span class="iconify" data-icon="entypo:dot-single"
                                                                       data-inline="false" data-width="18px"
                                                                       data-height="18px"></span>
-                                                                <a href="{% url 'view_profile' subcategory.get_last_post.publisher.username|truncatechars:10 %}">
-                                                                    {{ subcategory.get_last_post.publisher }}
+                                                                <a class="{{ subcategory.get_last_post.publisher.user.user_rank.rank }}-color"
+                                                                   href="{% url 'view_profile' subcategory.get_last_post.publisher.username|truncatechars:10 %}">
+                                                                    {{ subcategory.get_last_post.publisher.username }}
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -138,7 +139,7 @@
                                 <span class="text-stat">MESAJ</span>
                             </div>
                             <div class="col-lg-3">
-                                <span class="num-stat">{{ all_users }}</span><br>
+                                <span class="num-stat">{{ all_users|add:1500 }}</span><br>
                                 <span class="text-stat">ÜYE</span>
                             </div>
                             <div class="col-lg-3">
@@ -182,41 +183,42 @@
                                 Reklam Alanı
                             </div>
                             <div class="sidebar-body" style="height: 200px;">
-                                <!--
                                 <div class="marquee">
                                     <div>
-                                        <div>
+                                        <a target="_blank" href="https://one-xgqac.world/tr/">
+                                            <div class="div3">
                                         <span class="iconify"
                                               data-icon="entypo:megaphone" data-inline="false"></span>
-                                            5$ Free Bet
-                                        </div>
-                                        <div>
+                                                <img style="width: 60px;" alt="logo-ads"
+                                                     src="/media/ads-logo/1xbet.svg">
+                                                %200 Özel Bonus
+                                            </div>
+                                        </a>
+                                        <a target="_blank" href="https://betwinner1.com/tr/">
+                                            <div class="div3">
                                         <span class="iconify"
                                               data-icon="entypo:megaphone" data-inline="false"></span>
-                                            5$ Free Bet
-                                        </div>
-                                        <div class="div3">
+                                                <img style="width: 60px;" alt="logo-ads"
+                                                     src="/media/ads-logo/betwinner.svg">
+                                                975₺ Özel Bonus
+                                            </div>
+                                        </a>
+                                        <a target="_blank" href="https://www.hepsibahis931.com/">
+                                            <div class="div3">
                                         <span class="iconify"
                                               data-icon="entypo:megaphone" data-inline="false"></span>
-                                            5$ Free Bet
-                                        </div>
-                                        <div class="div3">
-                                        <span class="iconify"
-                                              data-icon="entypo:megaphone" data-inline="false"></span>
-                                            5$ Free Bet
-                                        </div>
-                                        <div class="div3">
-                                        <span class="iconify"
-                                              data-icon="entypo:megaphone" data-inline="false"></span>
-                                            5$ Free Bet
-                                        </div>
+                                                <img style="width: 60px;" alt="logo-ads"
+                                                     src="/media/ads-logo/youwin.png">
+                                                350₺ Bonus
+                                            </div>
+                                        </a>
                                     </div>
-                                </div>-->
+                                </div>
                             </div>
                         </div>
                         <div class="sidebar-content">
                             <div class="sidebar-header">
-                                Reklam Alanı
+                                YouWin Özel Alanı
                             </div>
                             <div class="sidebar-body">
                                 <iframe allowtransparency="true"

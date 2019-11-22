@@ -10,9 +10,9 @@ def upload_to_directory(instance, filename):
 
 class Ranks(models.Model):
     ROLES = (
-        (1, 'Yeni Tim Üyesi'),
-        (2, 'Kıdemli Tim Üyesi'),
-        (3, 'Özel Tim Üyesi'),
+        (1, 'Yeni Üye'),
+        (2, 'Kıdemli Üye'),
+        (3, 'Özel Üye'),
         (4, 'Moderatör'),
         (5, 'Büro Destek'),
         (6, 'Admin'),

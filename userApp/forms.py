@@ -3,6 +3,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from .models import User, UserProfile, Messages
 from datetime import datetime
 
+
 YEARS = [i for i in range(1950, datetime.now().year - 17)]
 
 
@@ -58,6 +59,7 @@ class LoginForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(LoginForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs = {'class': 'form-control'}
+        self.fields['username'].label = "Kullanıcı Adı veya Email"
         self.fields['password'].widget.attrs = {'class': 'form-control', 'placeholder': '********'}
 
 

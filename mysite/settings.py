@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'userApp',
     'notifications',
     'hitcount',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -120,11 +122,11 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'mainApp/../static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'mainApp/../static_root')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mainApp/../media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_FROM_EMAIL = 'info@bestanaliz.com'
 EMAIL_HOST = 'smtp.sendgrid.net'
@@ -135,3 +137,28 @@ EMAIL_USE_TLS = True
 
 DJANGO_NOTIFICATIONS_CONFIG = {'USE_JSONFIELD': True}
 
+####################################
+##  CKEDITOR CONFIGURATION ##
+####################################
+
+# CKEDITOR_BASEPATH = os.path.join(BASE_DIR, '/static_root/ckeditor/ckeditor/')
+CKEDITOR_UPLOAD_PATH = 'ckeditor/'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'width': '100%',
+        'toolbar_Full': [
+            ['Styles', 'Format', 'FontSize', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
+            ['Link', 'Unlink'],
+            ['Image'],
+            ['TextColor', 'BGColor'],
+            ['Smiley'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['NumberedList', 'BulletedList'],
+            ['Indent', 'Outdent'],
+            ['Maximize'],
+        ],
+        'extraPlugins': 'justify,liststyle,indent',
+    },
+}
+###################################

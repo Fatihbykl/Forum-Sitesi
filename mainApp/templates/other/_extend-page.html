@@ -15,272 +15,280 @@
 </head>
 <body style="background-color: #F1F3F6">
 <div class="main-container">
-<nav class="panel-menu" id="mobile-menu">
-    <ul>
+    <nav class="panel-menu" id="mobile-menu">
+        <ul>
 
-    </ul>
-    <div class="mm-navbtn-names">
-        <div class="mm-closebtn">
-            Close
-            <div class="tt-icon">
-                <span style="width: 26px;height: 26px;" class="iconify" data-icon="uil:times" data-inline="false"></span>
-            </div>
-        </div>
-        <div class="mm-backbtn">Back</div>
-    </div>
-</nav>
-<header id="tt-header">
-    <div class="container">
-        <div class="row tt-row no-gutters">
-            <div class="col-auto">
-                <!-- toggle mobile menu -->
-                <a class="toggle-mobile-menu" href="#" id="mobile-navbar">
-                    <span style="width: 26px;height: 26px;" class="iconify" data-icon="ion:menu" data-inline="false"></span>
-                </a>
-                <!-- /toggle mobile menu -->
-                <!-- logo -->
-                <div class="">
-                    <a href="{% url 'homepage' %}">
-                        <img alt="" style="width: 160px;" src="/media/logo/logo2.svg">
-                    </a>
+        </ul>
+        <div class="mm-navbtn-names">
+            <div class="mm-closebtn">
+                Close
+                <div class="tt-icon">
+                    <span style="width: 26px;height: 26px;" class="iconify" data-icon="uil:times"
+                          data-inline="false"></span>
                 </div>
-                <!-- /logo -->
-                <!-- desctop menu -->
-                <div class="tt-desktop-menu">
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="{% url 'homepage' %}">
+            </div>
+            <div class="mm-backbtn">Back</div>
+        </div>
+    </nav>
+    <header id="tt-header">
+        <div class="container">
+            <div class="row tt-row no-gutters">
+                <div class="col-12 pt-2 pb-2">
+                    <!-- toggle mobile menu -->
+                    <a class="toggle-mobile-menu" href="#" id="mobile-navbar">
+                        <span style="width: 26px;height: 26px;" class="iconify" data-icon="ion:menu"
+                              data-inline="false"></span>
+                    </a>
+                    <!-- /toggle mobile menu -->
+                    <!-- logo -->
+                    <div style="display: inline-block;">
+                        <a href="{% url 'homepage' %}">
+                            <img alt="logo" src="/media/logo/logo2.svg">
+                        </a>
+                    </div>
+                    <!-- /logo -->
+                    <!-- desctop menu -->
+                    <div class="tt-desktop-menu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'homepage' %}">
                                 <span id="homepage">
                                     Forumlar
                                 </span>
-                                </a>
-                            </li>
-                            <li><a href="{% url 'contact' %}"><span>Reklam & İletişim</span></a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <div class="col-auto ml-auto icons">
-                {% if request.user.is_authenticated %}
-                    <div class="tt-user-info d-flex justify-content-center">
-                        <div class="tt-avatar-icon tt-size-md">
-                            <div class="dropdown">
-                                <a href="#" class="tt-btn-icon header-signup-a" style="display: unset;">
+                                    </a>
+                                </li>
+                                <li><a href="{% url 'contact' %}"><span>Reklam & İletişim</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    {% if request.user.is_authenticated %}
+                        <div class="tt-user-info d-flex justify-content-center float-right">
+                            <div class="tt-avatar-icon tt-size-md">
+                                <div class="dropdown">
+                                    <a href="#" class="tt-btn-icon header-signup-a" style="display: unset;">
                                     <span class="header-signup-span">
-                                <span style="width: 18px;height: 18px;margin-right: 7px;" class="iconify"
+                                <span class="iconify header-icons"
                                       data-icon="fa-solid:user"
                                       data-inline="false"></span>
                                         <span class="mobile-hide">{{ request.user.username }}</span>
                                     </span>
-                                </a>
-                                <div class="dropdown-content">
-                                    <div>
-                                        <div class="header-profile background-header">
-                                            <img alt="Profil Fotoğrafı"
-                                                 style="width: 100px;height: 100px;float: left;margin-right: 12px;"
-                                                 class="img-thumbnail"
-                                                 src="/media/{{ request.user.user.photo }}">
-                                            <h3>{{ request.user.username }}</h3>
-                                            <span style="font-size: 12px;">{{ request.user.user.user_rank.get_rank_display }}</span>
+                                    </a>
+                                    <div class="dropdown-content">
+                                        <div>
+                                            <div class="header-profile background-header">
+                                                <img alt="Profil Fotoğrafı"
+                                                     style="width: 100px;height: 100px;float: left;margin-right: 12px;"
+                                                     class="img-thumbnail"
+                                                     src="/media/{{ request.user.user.photo }}">
+                                                <h3>{{ request.user.username }}</h3>
+                                                <span style="font-size: 12px;">{{ request.user.user.user_rank.get_rank_display }}</span>
+                                            </div>
                                         </div>
+                                        <ul>
+                                            <a href="{% url 'view_profile' request.user.username %}">
+                                                <li>
+                                                    Profilim
+                                                    <span class="iconify" data-icon="fa-solid:user"
+                                                          data-inline="false"></span>
+                                                </li>
+                                            </a>
+                                            <a href="{% url 'view_profile_topics' request.user.username %}">
+                                                <li>
+                                                    Konularım
+                                                    <span class="iconify" data-icon="ant-design:folder-fill"
+                                                          data-inline="false"></span>
+                                                </li>
+                                            </a>
+                                            <a href="{% url 'view_profile_replies' request.user.username %}">
+                                                <li>
+                                                    Yanıtlarım
+                                                    <span class="iconify" data-icon="fa-solid:reply"
+                                                          data-inline="false"></span>
+                                                </li>
+                                            </a>
+                                            <a href="{% url 'view_profile_settings' request.user.username %}">
+                                                <li>
+                                                    Ayarlar
+                                                    <span class="iconify" data-icon="ic:baseline-settings"
+                                                          data-inline="false"></span>
+                                                </li>
+                                            </a>
+                                            <a href="{% url 'signout2' %}">
+                                                <li>
+                                                    Çıkış Yap
+                                                    <span class="iconify" data-icon="mdi:logout-variant"
+                                                          data-inline="false"></span>
+                                                </li>
+                                            </a>
+                                        </ul>
                                     </div>
-                                    <ul>
-                                        <a href="{% url 'view_profile' request.user.username %}">
-                                            <li>
-                                                Profilim
-                                                <span class="iconify" data-icon="fa-solid:user"
-                                                      data-inline="false"></span>
-                                            </li>
-                                        </a>
-                                        <a href="{% url 'view_profile_topics' request.user.username %}">
-                                            <li>
-                                                Konularım
-                                                <span class="iconify" data-icon="ant-design:folder-fill"
-                                                      data-inline="false"></span>
-                                            </li>
-                                        </a>
-                                        <a href="{% url 'view_profile_replies' request.user.username %}">
-                                            <li>
-                                                Yanıtlarım
-                                                <span class="iconify" data-icon="fa-solid:reply"
-                                                      data-inline="false"></span>
-                                            </li>
-                                        </a>
-                                        <a href="{% url 'view_profile_settings' request.user.username %}">
-                                            <li>
-                                                Ayarlar
-                                                <span class="iconify" data-icon="ic:baseline-settings"
-                                                      data-inline="false"></span>
-                                            </li>
-                                        </a>
-                                        <a href="{% url 'signout2' %}">
-                                            <li>
-                                                Çıkış Yap
-                                                <span class="iconify" data-icon="mdi:logout-variant"
-                                                      data-inline="false"></span>
-                                            </li>
-                                        </a>
-                                    </ul>
                                 </div>
-                            </div>
-                            <div class="dropdown-notif">
-                                <div class=" header-signup-a" style="display: unset;">
+                                <div class="dropdown-notif">
+                                    <div class=" header-signup-a" style="display: unset;">
                                 <span class="header-signup-span">
-                                    <span class="iconify" data-icon="fa-solid:bell" data-inline="false"
-                                          style="width: 18px;height: 18px;"></span>
+                                    <span class="iconify header-icons" data-icon="fa-solid:bell"
+                                          data-inline="false"></span>
                                     <span class="color-blue bold" id="counter"
                                           style="position: absolute;margin-top: -15px;margin-left: -5px;">
                                         {{ request.user.notifications.unread.count }}
                                     </span>
                                 </span>
 
-                                    <div class="dropdown-content-notif"
-                                         id="notif-content">
+                                        <div class="dropdown-content-notif"
+                                             id="notif-content">
 
-                                        <div class="notif-header border-top-blue color-blue bold background-header pl-3 pr-3"
-                                             style="border-bottom: 1px solid #DFDFDF;">
-                                            Bildirimler <span id="notif-read" class="float-right"><span
-                                                style="width: 20px;height: 20px;" class="iconify"
-                                                data-icon="ion:eye-outline"
-                                                data-inline="false"></span></span>
-                                        </div>
-                                        <ul class="notif-ul pb-0 mb-0">
-                                            {% for notify in request.user.notifications.all %}
-                                                <li id="{{ notify.slug }}-hide">
-                                                    <div class="row m-0">
-                                                        <div class="col-2">
-                                                            {% if notify.data.extra_tag == 'comment' %}
-                                                                <span class="iconify" style="color: #C8534C;"
-                                                                      data-icon="octicon:comment-discussion"
-                                                                      data-inline="false"></span>
-                                                            {% elif notify.data.extra_tag == 'like' %}
-                                                                <span class="iconify" style="color: #808A19;"
-                                                                      data-icon="ant-design:like-outline"
-                                                                      data-inline="false"></span>
-                                                            {% elif notify.data.extra_tag == 'message' %}
-                                                                <span class="iconify" style="color: #993333;"
-                                                                      data-icon="ei:envelope"
-                                                                      data-inline="false"></span>
-                                                            {% else %}
-                                                                <span class="iconify" style="color: #144470;"
-                                                                      data-icon="mdi:reply-outline"
-                                                                      data-inline="false"></span>
-                                                            {% endif %}
-                                                        </div>
-                                                        <div class="col-10">
-                                                            {% if notify.data.extra_tag != 'message' %}
-                                                                <a href="{% url 'single_topic' notify.data.post_slug %}#{{ notify.data.comment_id }}">
-                                                                    <span class="notif-verb">{{ notify.verb }}</span><br>
-                                                                </a>
-                                                            {% else %}
-                                                                <a href="{% url 'message_inbox' request.user %}#{{ notify.data.comment_id }}">
-                                                                    <span class="notif-verb">{{ notify.verb }}</span><br>
-                                                                </a>
-                                                            {% endif %}
-                                                            <div class="notif-time mt-2">
+                                            <div class="notif-header border-top-blue color-blue bold background-header pl-3 pr-3"
+                                                 style="border-bottom: 1px solid #DFDFDF;">
+                                                Bildirimler <span id="notif-read" class="float-right"><span
+                                                    style="width: 20px;height: 20px;" class="iconify"
+                                                    data-icon="ion:eye-outline"
+                                                    data-inline="false"></span></span>
+                                            </div>
+                                            <ul class="notif-ul pb-0 mb-0">
+                                                {% for notify in request.user.notifications.all %}
+                                                    <li id="{{ notify.slug }}-hide">
+                                                        <div class="row m-0">
+                                                            <div class="col-2">
+                                                                {% if notify.data.extra_tag == 'comment' %}
+                                                                    <span class="iconify" style="color: #C8534C;"
+                                                                          data-icon="octicon:comment-discussion"
+                                                                          data-inline="false"></span>
+                                                                {% elif notify.data.extra_tag == 'like' %}
+                                                                    <span class="iconify" style="color: #808A19;"
+                                                                          data-icon="ant-design:like-outline"
+                                                                          data-inline="false"></span>
+                                                                {% elif notify.data.extra_tag == 'message' %}
+                                                                    <span class="iconify" style="color: #993333;"
+                                                                          data-icon="ei:envelope"
+                                                                          data-inline="false"></span>
+                                                                {% else %}
+                                                                    <span class="iconify" style="color: #144470;"
+                                                                          data-icon="mdi:reply-outline"
+                                                                          data-inline="false"></span>
+                                                                {% endif %}
+                                                            </div>
+                                                            <div class="col-10">
+                                                                {% if notify.data.extra_tag != 'message' %}
+                                                                    <a href="{% url 'single_topic' notify.data.post_slug %}#{{ notify.data.comment_id }}">
+                                                                        <span class="notif-verb">{{ notify.verb }}</span><br>
+                                                                    </a>
+                                                                {% else %}
+                                                                    <a href="{% url 'message_inbox' request.user %}#{{ notify.data.comment_id }}">
+                                                                        <span class="notif-verb">{{ notify.verb }}</span><br>
+                                                                    </a>
+                                                                {% endif %}
+                                                                <div class="notif-time mt-2">
                                                                 <span class="iconify" data-icon="subway:time-4"
                                                                       data-inline="false"
                                                                       style="width: 12px;height: 12px"></span>
-                                                                <span style="vertical-align: middle;margin-right: 30px;font-weight: bold">{{ notify.timestamp|timesince }}</span>
-                                                                <span id="delete-notif-{{ notify.slug }}"
-                                                                      style="padding: 7px;"
-                                                                      class="hover-pointer">
+                                                                    <span style="vertical-align: middle;margin-right: 30px;font-weight: bold">{{ notify.timestamp|timesince }}</span>
+                                                                    <span id="delete-notif-{{ notify.slug }}"
+                                                                          style="padding: 7px;"
+                                                                          class="hover-pointer">
                                                                 <span class="iconify" style="width: 16px;height: 16px;"
                                                                       data-icon="iwwa:delete" data-inline="false"
                                                                 ></span>
                                                             </span>
+                                                                </div>
                                                             </div>
+                                                            <hr>
                                                         </div>
-                                                        <hr>
-                                                    </div>
-                                                </li>
-                                                <script>
-                                                    $(document).ready(function () {
-                                                        $('#delete-notif-{{ notify.slug }}').click(function () {
-                                                            $.ajax({
-                                                                url: "{% url 'delete_notification' notify.slug %}",
-                                                                success: function (data) {
-                                                                    $('#{{ notify.slug }}-hide').hide(800)
-                                                                }
+                                                    </li>
+                                                    <script>
+                                                        $(document).ready(function () {
+                                                            $('#delete-notif-{{ notify.slug }}').click(function () {
+                                                                $.ajax({
+                                                                    url: "{% url 'delete_notification' notify.slug %}",
+                                                                    success: function (data) {
+                                                                        $('#{{ notify.slug }}-hide').hide(800)
+                                                                    }
+                                                                })
                                                             })
                                                         })
-                                                    })
-                                                </script>
-                                            {% empty %}
-                                                Hiç bildiriminiz yok.
-                                            {% endfor %}
-                                        </ul>
+                                                    </script>
+                                                {% empty %}
+                                                    Hiç bildiriminiz yok.
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <a href="{% url 'message_inbox' request.user.username %}"
-                               class="tt-btn-icon header-signup-a" style="display: unset;">
+                                <a href="{% url 'message_inbox' request.user.username %}"
+                                   class="tt-btn-icon header-signup-a" style="display: unset;">
                                 <span class="header-signup-span">
-                                <span class="iconify" data-icon="fa-solid:envelope" data-inline="false"
-                                      style="width: 18px;height: 18px;"></span></span>
+                                <span class="iconify header-icons" data-icon="fa-solid:envelope"
+                                      data-inline="false"></span></span>
+                                </a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="tt-user-info d-flex justify-content-center float-right">
+                            <a href="{% url 'login2' %}" class="header-signup-a">
+                                <span class="header-signup-span">
+                                    <span style="height: 18px;width: 18px;" class="iconify" data-icon="mdi:login-variant" data-inline="false"></span>
+                                    <span class="hide-mobile2">Giriş Yap</span></span>
+                            </a>
+                            <a href="{% url 'signup2' %}" class="header-signup-a">
+                                <span class="header-signup-span">
+                                    <span style="height: 18px;width: 18px;" class="iconify" data-icon="gridicons:user-add" data-inline="false"></span>
+                                    <span class="hide-mobile2">Kayıt Ol</span></span>
                             </a>
                         </div>
-                    </div>
-                {% else %}
-                    <div class="tt-account-btn">
-                        <a href="{% url 'login2' %}" class="header-signup-a">
-                            <span class="header-signup-span">Giriş Yap</span>
-                        </a>
-                        <a href="{% url 'signup2' %}" class="header-signup-a">
-                            <span class="header-signup-span">Kayıt Ol</span>
-                        </a>
-                    </div>
-                {% endif %}
+                    {% endif %}
+                </div>
             </div>
         </div>
-    </div>
-</header>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            {% include 'includes/messages.html' %}
-        </div>
-    </div>
-</div>
-
-{% block body %}
-{% endblock %}
-
-<footer class="site-footer">
+    </header>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <a href="https://twitter.com/bestanalizcom" target="_blank"><span class="iconify" data-icon="ant-design:twitter-circle-fill" data-inline="false"></span></a>
-            </div>
-            <div class="col-sm-12 col-md-9 col-lg-9">
-                <ul>
-                    <li>
-                        <a href="{% url 'contact' %}">
-                            <span class="iconify" data-icon="fa-solid:envelope" data-inline="false"></span>
-                            <span class="v-align">Bize Ulaşın</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'forum_rules' %}">
-                            <span class="iconify" data-icon="icomoon-free:hammer2" data-inline="false"></span>
-                            <span class="v-align">Forum Kuralları</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'homepage' %}">
-                            <span class="iconify" data-icon="ant-design:home-fill" data-inline="false"></span>
-                            <span class="v-align">Ana Sayfa</span>
-                        </a>
-                    </li>
-                </ul>
+            <div class="col-lg-12">
+                {% include 'includes/messages.html' %}
             </div>
         </div>
     </div>
-</footer>
+
+    {% block body %}
+    {% endblock %}
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <a href="https://twitter.com/bestanalizcom" target="_blank"><span class="iconify"
+                                                                                      data-icon="ant-design:twitter-circle-fill"
+                                                                                      data-inline="false"></span></a>
+                </div>
+                <div class="col-sm-12 col-md-9 col-lg-9">
+                    <ul>
+                        <li>
+                            <a href="{% url 'contact' %}">
+                                <span class="iconify" data-icon="fa-solid:envelope" data-inline="false"></span>
+                                <span class="v-align">Bize Ulaşın</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'forum_rules' %}">
+                                <span class="iconify" data-icon="icomoon-free:hammer2" data-inline="false"></span>
+                                <span class="v-align">Forum Kuralları</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'homepage' %}">
+                                <span class="iconify" data-icon="ant-design:home-fill" data-inline="false"></span>
+                                <span class="v-align">Ana Sayfa</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
 <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
 <script src="{% static 'js/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
 <script>
     $(document).ready(function () {
         $('#close-alert').click(function () {

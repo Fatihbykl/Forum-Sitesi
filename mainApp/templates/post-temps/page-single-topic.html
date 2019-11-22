@@ -224,7 +224,7 @@
                                                 {{ comment.embed_code|safe }}
                                             {% endautoescape %}
                                         {% endif %}
-                                        {{ comment.comment_text }}
+                                        {{ comment.comment_text|safe }}
                                     {% else %}
                                         Forum içeriğini görebilmeniz için <a href="{% url 'signup2' %}">üye olmanız</a>
                                         gerekmektedir.

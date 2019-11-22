@@ -1,8 +1,11 @@
 from django import forms
 from .models import Post, Comments, Contact
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 
 class PostForm(forms.ModelForm):
+    body = forms.CharField(widget=CKEditorUploadingWidget())
+
     class Meta:
         model = Post
         fields = ['title', 'body']
@@ -15,6 +18,7 @@ class PostForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
+    comment_text = forms.CharField(widget=CKEditorUploadingWidget())
     class Meta:
         model = Comments
         fields = ['comment_text']

@@ -10,6 +10,7 @@ from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
 from notifications.signals import notify
+import re
 
 
 def signup(request):
@@ -46,6 +47,15 @@ def signin(request):
         form = LoginForm(data=request.POST or None)
         username = request.POST.get('username')
         password = request.POST.get('password')
+        regex = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
+        if re.match(regex, username):
+            try:
+                user_email = User.objects.get(email=username)
+                username = user_email.username
+            except:
+                messages.add_message(request, messages.ERROR, "Girdiğiniz email sistemde kayıtlı değil.",
+                                     extra_tags='note--error')
+                return render(request, template_name='other/page-login.html', context={'form': form})
         user = authenticate(username=username, password=password)
         if user:
             login(request, user)
@@ -117,7 +127,9 @@ def view_profile_settings(request, username):
 
 def view_profile_admin(request, username):
     roles = Ranks.objects.all()
-    return render(request, template_name='profile/page-admin.html', context={'username': username, 'roles': roles})
+    user = get_object_or_404(User, username=username)
+    return render(request, template_name='profile/page-admin.html',
+                  context={'username': username, 'roles': roles, 'profile': user})
 
 
 def set_user_inactive(request):
@@ -191,6 +203,7 @@ def change_role(request):
 
     else:
         return HttpResponseBadRequest()
+
 
 @login_required(login_url='/kullanici/giris-yap/')
 def change_profile_photo(request, username):

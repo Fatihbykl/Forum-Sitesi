@@ -3,43 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="372ea776-1ff7-4af8-80e2-ec736ab35722" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApp/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApp/migrations/0002_auto_20191111_0034.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApp/templates/includes/ads.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/templates/includes/ads.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainApp/templates/other/_extend-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/templates/other/_extend-page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainApp/templates/other/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/templates/other/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApp/templates/other/page-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/templates/other/page-login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApp/templates/profile/page-admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/templates/profile/page-admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApp/templates/registration/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/templates/registration/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_0CYqBmD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_0M8jSGm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_1RbbATH.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_3LWimXD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_4yMVvdZ.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_67PGBli.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_84hVUOF.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_BzVlCLl.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_IWNYhHp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_Iq8pEQS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_OBQVTnp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_QwkqA7B.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_RtZfLv5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_VhELgHe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_dvt9MIR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_f1txp92.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_lUs3faj.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_o49UItA.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_oDkr9y6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_pxjY6KX.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_vUzTVcm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/category_images/bahistimiyazisiz_1_zFyS9fk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/templates/post-temps/page-categories-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/templates/post-temps/page-categories-single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/templates/post-temps/page-single-topic.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/templates/post-temps/page-single-topic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/templates/profile/page-single-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/templates/profile/page-single-user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Ranks/Admins.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Ranks/Editors.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Ranks/Gold.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Ranks/Gümüş.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Ranks/Moderators.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Ranks/New Member.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static_root/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static_root/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static_root/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/static_root/css/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static_root/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/static_root/js/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userApp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,25 +87,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mainApp/views.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mainApp/templates/other/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="308" column="54" lean-forward="true" selection-start-line="308" selection-start-column="54" selection-end-line="308" selection-end-column="54" />
+            <state relative-caret-position="142">
+              <caret line="205" column="57" selection-start-line="205" selection-start-column="57" selection-end-line="205" selection-end-column="57" />
               <folding>
-                <element signature="e#0#53#0" expanded="true" />
+                <element signature="e#13280#13300#0#HTML" expanded="true" />
+                <element signature="e#13712#13732#0#HTML" expanded="true" />
+                <element signature="e#14157#14177#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mainApp/models.py">
+        <entry file="file://$PROJECT_DIR$/static/css/style2.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
-              <caret line="190" column="68" selection-start-line="190" selection-start-column="68" selection-end-line="190" selection-end-column="68" />
+            <state relative-caret-position="318">
+              <caret line="427" column="21" selection-start-line="427" selection-start-column="21" selection-end-line="427" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mainApp/templates/profile/page-single-user.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,12 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Notifica</find>
-      <find>notif</find>
-      <find>html</find>
-      <find>main</find>
-      <find>svg</find>
-      <find>img alt</find>
       <find>like</find>
       <find>created_ti</find>
       <find>426px</find>
@@ -155,7 +145,6 @@
       <find>repl</find>
       <find>konu</find>
       <find>reply</find>
-      <find>class</find>
       <find>class='6'</find>
       <find>content-notif</find>
       <find>col-auto ml-auto</find>
@@ -170,6 +159,13 @@
       <find>send_ma</find>
       <find>advertis</find>
       <find>contact</find>
+      <find>aspect</find>
+      <find>post.bod</find>
+      <find>comment.comment</find>
+      <find>class</find>
+      <find>tt-col-value</find>
+      <find>426</find>
+      <find>marquee</find>
     </findStrings>
     <replaceStrings>
       <replace>/media</replace>
@@ -191,32 +187,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mainApp/templates/registration/password_reset_subject.txt" />
-        <option value="$PROJECT_DIR$/mainApp/templates/registration/password_reset_email.html" />
         <option value="$PROJECT_DIR$/mainApp/template-tags.py" />
         <option value="$PROJECT_DIR$/mainApp/templatetags/template_tags.py" />
-        <option value="$PROJECT_DIR$/mainApp/forms.py" />
         <option value="$PROJECT_DIR$/mainApp/migrations/0005_auto_20191105_2357.py" />
         <option value="$PROJECT_DIR$/mainApp/templates/includes/messages.html" />
-        <option value="$PROJECT_DIR$/mysite/urls.py" />
         <option value="$PROJECT_DIR$/mainApp/static/js/bundle.js" />
         <option value="$PROJECT_DIR$/mainApp/static/css/style.css" />
         <option value="$PROJECT_DIR$/mainApp/static/css/style2.css" />
         <option value="$PROJECT_DIR$/static/js/bundle.js" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/userApp/models.py" />
         <option value="$PROJECT_DIR$/mainApp/templates/messages/message-detail-inbox.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/messages/messages-page-inbox.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/other/page-contact.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/other/page-signup.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/post-temps/edit-comment.html" />
-        <option value="$PROJECT_DIR$/mainApp/templates/post-temps/page-categories-single.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/post-temps/page-create-topic.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/post-temps/page-edit-post.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/post-temps/page-search.html" />
-        <option value="$PROJECT_DIR$/mainApp/templates/post-temps/page-single-topic.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/post-temps/reply_comments.html" />
-        <option value="$PROJECT_DIR$/mainApp/templates/profile/page-single-user.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/profile/page-single_replies.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/profile/page-single_settings.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/profile/page-single_threads.html" />
@@ -229,26 +216,36 @@
         <option value="$PROJECT_DIR$/mainApp/templates/contact_mail/content.html" />
         <option value="$PROJECT_DIR$/userApp/urls.py" />
         <option value="$PROJECT_DIR$/mainApp/templates/profile/page-admin.html" />
-        <option value="$PROJECT_DIR$/userApp/views.py" />
         <option value="$PROJECT_DIR$/mainApp/templates/registration/base.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/other/page-login.html" />
-        <option value="$PROJECT_DIR$/static/css/style2.css" />
-        <option value="$PROJECT_DIR$/mainApp/templates/other/index.html" />
         <option value="$PROJECT_DIR$/mainApp/admin.py" />
         <option value="$PROJECT_DIR$/mainApp/urls.py" />
         <option value="$PROJECT_DIR$/mainApp/templates/other/page-rules.html" />
-        <option value="$PROJECT_DIR$/mainApp/templates/other/_extend-page.html" />
         <option value="$PROJECT_DIR$/mainApp/templates/includes/ads.html" />
-        <option value="$PROJECT_DIR$/mysite/settings.py" />
-        <option value="$PROJECT_DIR$/mainApp/models.py" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
+        <option value="$PROJECT_DIR$/media/arrowdown.svg" />
         <option value="$PROJECT_DIR$/mainApp/views.py" />
+        <option value="$PROJECT_DIR$/mainApp/models.py" />
+        <option value="$PROJECT_DIR$/mysite/urls.py" />
+        <option value="$PROJECT_DIR$/mainApp/forms.py" />
+        <option value="$PROJECT_DIR$/mainApp/templates/post-temps/page-single-topic.html" />
+        <option value="$PROJECT_DIR$/mysite/settings.py" />
+        <option value="$PROJECT_DIR$/userApp/models.py" />
+        <option value="$PROJECT_DIR$/mainApp/templates/post-temps/page-categories-single.html" />
+        <option value="$PROJECT_DIR$/userApp/forms.py" />
+        <option value="$PROJECT_DIR$/userApp/views.py" />
+        <option value="$PROJECT_DIR$/mainApp/templates/other/_extend-page.html" />
+        <option value="$PROJECT_DIR$/mainApp/templates/other/index.html" />
+        <option value="$PROJECT_DIR$/static/css/style2.css" />
+        <option value="$PROJECT_DIR$/mainApp/templates/profile/page-single-user.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -273,7 +270,57 @@
               <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
               <item name="mainApp" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name="mainApp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name="static_root" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name="static_root" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SiteProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SiteProject" type="462c0819:PsiDirectoryNode" />
+              <item name="userApp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -285,26 +332,26 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/web_django" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/website" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Fatih\Forum\SiteProject\media\category_images" />
-      <recent name="C:\Users\Fatih\Forum\SiteProject\media\logo" />
-      <recent name="C:\Users\Fatih\Forum\SiteProject\mainApp\media\logo" />
-      <recent name="C:\Users\Fatih\Forum\SiteProject\mainApp\media" />
-      <recent name="C:\Users\Fatih\Forum\SiteProject\mainApp\media\Ranks" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Fatih\Forum\SiteProject" />
       <recent name="C:\Users\Fatih\Forum\SiteProject\mainApp\templatetags" />
       <recent name="C:\Users\Fatih\Forum\SiteProject\mainApp\templates\other" />
       <recent name="C:\Users\Fatih\Forum\SiteProject\mainApp\templates\post-temps" />
       <recent name="C:\Users\Fatih\Forum\SiteProject\mainApp\templates\includes" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Fatih\Forum\SiteProject\media\ads-logo" />
+      <recent name="C:\Users\Fatih\Forum\SiteProject\media\Ranks" />
+      <recent name="C:\Users\Fatih\Forum\SiteProject\media" />
+      <recent name="C:\Users\Fatih\Forum\SiteProject\media\category_images" />
+      <recent name="C:\Users\Fatih\Forum\SiteProject\media\logo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -386,19 +433,26 @@
       <workItem from="1573469391842" duration="685000" />
       <workItem from="1573839270922" duration="4516000" />
       <workItem from="1573920850943" duration="4156000" />
-      <workItem from="1574071141781" duration="14647000" />
+      <workItem from="1574071141781" duration="14941000" />
+      <workItem from="1574271015568" duration="168000" />
+      <workItem from="1574271665834" duration="1401000" />
+      <workItem from="1574279391007" duration="291000" />
+      <workItem from="1574411038414" duration="1785000" />
+      <workItem from="1574414796801" duration="11671000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378730000" />
+    <option name="totallyTimeSpent" value="394340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21409395" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -408,9 +462,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50201344" side_tool="true" weight="0.22521247" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49798658" weight="0.19121814" />
+      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5026846" side_tool="true" weight="0.19121814" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49731544" weight="0.19121814" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -423,39 +477,33 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/css/style.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="11" column="59337" selection-start-line="11" selection-start-column="59337" selection-end-line="11" selection-end-column="59337" />
-          <folding>
-            <element signature="e#70698#70969#2" expanded="true" />
-            <element signature="e#72244#72960#2" expanded="true" />
-            <element signature="e#93112#93498#2" expanded="true" />
-            <element signature="e#93820#94026#2" expanded="true" />
-            <element signature="e#118101#118532#2" expanded="true" />
-            <element signature="e#118561#118992#2" expanded="true" />
-            <element signature="e#119120#119547#2" expanded="true" />
-            <element signature="e#135099#135950#2" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static_root/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="5288" column="15" selection-start-line="5288" selection-start-column="15" selection-end-line="5288" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ForumEnv/Lib/site-packages/django/contrib/auth/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="80" column="19" lean-forward="true" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/logo.png" />
     <entry file="file://$PROJECT_DIR$/media/default-pp.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -463,16 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="6287" column="2" lean-forward="true" selection-start-line="6287" selection-start-column="2" selection-end-line="6287" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111605">
-          <caret line="6565" selection-start-line="6565" selection-end-line="6565" />
-          <folding>
-            <element signature="e#99075#99791#2" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -514,31 +552,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/templates/post-temps/page-single-topic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainApp/templates/post-temps/reply_comments.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/templates/profile/page-single-user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/templates/profile/page-single_replies.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -553,33 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="183" column="55" selection-start-line="183" selection-start-column="55" selection-end-line="183" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/templates/profile/page-admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="102" column="56" lean-forward="true" selection-start-line="102" selection-start-column="56" selection-end-line="102" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -617,41 +607,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-          <folding>
-            <element signature="e#630#662#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainApp/templates/registration/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="59" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/templates/contact_mail/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/templates/other/page-login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="390" column="13" selection-start-line="390" selection-start-column="13" selection-end-line="390" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -675,13 +634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/templates/other/_extend-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="253" column="58" selection-start-line="253" selection-start-column="58" selection-end-line="253" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainApp/templates/other/page-contact.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
@@ -696,24 +648,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/templates/post-temps/page-categories-single.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainApp/templates/post-temps/page-search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/templates/other/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="24" column="90" lean-forward="true" selection-start-line="24" selection-start-column="90" selection-end-line="24" selection-end-column="90" />
         </state>
       </provider>
     </entry>
@@ -726,16 +664,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mainApp/templates/contact_mail/subject.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="128" column="41" selection-start-line="128" selection-start-column="41" selection-end-line="128" selection-end-column="41" />
-          <folding>
-            <element signature="e#307#316#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -778,22 +706,185 @@
     <entry file="file://$PROJECT_DIR$/media/logo/bahistimiyazisiz.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/mainApp/templates/contact_mail/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="5596" selection-start-line="5596" selection-end-line="5596" />
+          <folding>
+            <element signature="e#99075#99791#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/arrowdown.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="310" column="30" selection-start-line="310" selection-start-column="30" selection-end-line="310" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+          <folding>
+            <element signature="e#630#662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainApp/templates/profile/page-admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1696">
+          <caret line="102" column="56" lean-forward="true" selection-start-line="102" selection-start-column="56" selection-end-line="102" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainApp/templates/profile/page-single_replies.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainApp/templates/post-temps/page-single-topic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="226" column="68" selection-start-line="226" selection-start-column="68" selection-end-line="226" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="152" column="20" selection-start-line="152" selection-start-column="20" selection-end-line="152" selection-end-column="20" />
+          <folding>
+            <element signature="e#307#316#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainApp/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="67" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mainApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="190" column="68" selection-start-line="190" selection-start-column="68" selection-end-line="190" selection-end-column="68" />
+        <state relative-caret-position="2873">
+          <caret line="190" column="43" selection-start-line="190" selection-start-column="43" selection-end-line="190" selection-end-column="43" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainApp/views.py">
+    <entry file="file://$PROJECT_DIR$/mainApp/templates/post-temps/page-categories-single.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="308" column="54" lean-forward="true" selection-start-line="308" selection-start-column="54" selection-end-line="308" selection-end-column="54" />
+        <state relative-caret-position="289">
+          <caret line="170" column="116" selection-start-line="170" selection-start-column="116" selection-end-line="170" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainApp/templates/other/page-login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userApp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
-            <element signature="e#0#53#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userApp/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="61" column="52" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="56" column="60" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainApp/templates/other/_extend-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="233" column="75" selection-start-line="233" selection-start-column="75" selection-end-line="233" selection-end-column="75" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#0;n#a#0;n#div#3;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#0;n#a#1;n#div#3;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainApp/templates/other/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="205" column="57" selection-start-line="205" selection-start-column="57" selection-end-line="205" selection-end-column="57" />
+          <folding>
+            <element signature="e#13280#13300#0#HTML" expanded="true" />
+            <element signature="e#13712#13732#0#HTML" expanded="true" />
+            <element signature="e#14157#14177#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static_root/css/style2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="1365" column="18" lean-forward="true" selection-end-line="1372" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="427" column="21" selection-start-line="427" selection-start-column="21" selection-end-line="427" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainApp/templates/profile/page-single-user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

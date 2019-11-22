@@ -3,6 +3,7 @@ from django.template.defaultfilters import slugify
 from unidecode import unidecode
 from django.contrib.auth.models import User
 from django.utils.timezone import now
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 def upload_to_directory(instance, filename):
@@ -90,7 +91,7 @@ class Category(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=100, blank=False)
-    body = models.TextField(max_length=5000, blank=False)
+    body = RichTextUploadingField(max_length=5000, blank=False)
     created_time = models.DateTimeField(default=now())
     slug = models.SlugField(max_length=150, editable=False)
     category = models.ForeignKey(SubCategory, on_delete=models.SET_NULL, null=True, related_name='subcategory')
@@ -135,7 +136,7 @@ class Comments(models.Model):
     who_comment = models.ForeignKey(User, related_name='who_comment', on_delete=models.CASCADE)
     which_post = models.ForeignKey(Post, related_name='which_post', on_delete=models.CASCADE)
     created_time = models.DateTimeField(auto_now_add=True)
-    comment_text = models.TextField(max_length=2000, blank=False)
+    comment_text = RichTextUploadingField(max_length=2000, blank=False)
     reply = models.ForeignKey('self', related_name='reply_quote', on_delete=models.SET_NULL, null=True)
     embed_code = models.CharField(max_length=1000, null=True)
 
@@ -187,7 +188,7 @@ class Contact(models.Model):
 
 
 class ForumRules(models.Model):
-    text = models.TextField(max_length=10000, blank=False)
+    text = models.TextField(max_length=3000, blank=False)
     update_time = models.DateTimeField(default=now(), editable=False)
 
     class Meta:

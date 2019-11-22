@@ -104,9 +104,10 @@
                             <div>
                                 <span class="tt-color-select">
                                     {% if post.get_last_comment.who_comment %}
-                                        <a href="{% url 'view_profile' post.get_last_comment.who_comment %}">
-                                        <b>{{ post.get_last_comment.who_comment }}</b>
-                                    </a>
+                                        <a class="{{ post.get_last_comment.who_comment.user.user_rank.rank }}-color"
+                                           href="{% url 'view_profile' post.get_last_comment.who_comment %}">
+                                            {{ post.get_last_comment.who_comment }}
+                                        </a>
                                     {% else %}
                                         -
                                     {% endif %}
@@ -167,7 +168,8 @@
                                      src="/media/{{ post.get_last_comment.who_comment.user.photo }}">
                                 <div>
                                 <span class="tt-color-select">
-                                        <a href="{% url 'view_profile' post.get_last_comment.who_comment %}">
+                                        <a class="{{ post.get_last_comment.who_comment.user.user_rank.rank }}-color"
+                                           href="{% url 'view_profile' post.get_last_comment.who_comment %}">
                                         <b>{{ post.get_last_comment.who_comment }}</b>
                                     </a>
                                 </span>
