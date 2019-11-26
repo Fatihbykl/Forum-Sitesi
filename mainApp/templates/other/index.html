@@ -106,7 +106,9 @@
                                                                  src="/media/{{ subcategory.get_last_post.publisher.user.photo }}">
                                                         </div>
                                                         <div style="width: 30%;" class="tt-col-category">
-                                                            <h6 style="font-size: 13px;margin: 0;">{{ subcategory.get_last_post.title|truncatechars:30 }}</h6>
+                                                            <a href="{% url 'single_topic' subcategory.get_last_post.slug %}">
+                                                                <h6 style="font-size: 13px;margin: 0;">{{ subcategory.get_last_post.title|truncatechars:30 }}</h6>
+                                                            </a>
                                                             <div style="font-size: 13px;color: #9d9d9d">
                                                                 {{ subcategory.get_last_post.created_time.date }}
                                                                 <span class="iconify" data-icon="entypo:dot-single"
