@@ -27,6 +27,9 @@
                                         src="https://refbanners.com/I?tag=d_370957m_3981c_&site=370957&ad=3981"></iframe>
                                 <script async="async" id="1574079275982"
                                         src="https://bwtsrv.com/tags/display.js?trk_id=14SA&media_id=3e05e43a-4cd7-4f45-b212-711f1b9d2867&width=728&height=90&b=1574079275982"></script>
+                                <a target="_blank" href="https://www.betkanyon160.com/?btag=9871229_95925">
+                                    <img style="display: block;margin-left:auto;margin-right:auto;" alt="reklam" width="728px" src="/media/ads-logo/orta.gif">
+                                </a>
                             </div>
                         </div>
                     {% else %}
@@ -95,15 +98,30 @@
                                                                             </span>
                                                                         </a>
                                                                     </li>
+                                                                    {% if subcategory.get_last_post %}
+                                                                        <li class="ml-0 show-mobile"
+                                                                            style="font-size: 14px;padding-left: 7px;">
+                                                                            <span style="color: black;">Son Konu:</span>
+                                                                            <a href="{% url 'single_topic' subcategory.get_last_post.slug %}">
+                                                                                {{ subcategory.get_last_post.title|truncatechars:21 }}
+                                                                            </a>
+                                                                        </li>
+                                                                    {% endif %}
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     {% if subcategory.get_last_post %}
                                                         <div class="tt-col-value hide-mobile" style="width: 10%;">
-                                                            <img alt="pp"
-                                                                 style="width: 50px;height: 50px;border-radius: 50%;"
-                                                                 src="/media/{{ subcategory.get_last_post.publisher.user.photo }}">
+                                                            {% if subcategory.get_last_post.get_last_comment %}
+                                                                <img alt="pp"
+                                                                     style="width: 50px;height: 50px;border-radius: 50%;"
+                                                                     src="/media/{{ subcategory.get_last_post.get_last_comment.who_comment.user.photo }}">
+                                                            {% else %}
+                                                                <img alt="pp"
+                                                                     style="width: 50px;height: 50px;border-radius: 50%;"
+                                                                     src="/media/{{ subcategory.get_last_post.publisher.user.photo }}">
+                                                            {% endif %}
                                                         </div>
                                                         <div style="width: 30%;" class="tt-col-category">
                                                             <a href="{% url 'single_topic' subcategory.get_last_post.slug %}">
@@ -114,10 +132,17 @@
                                                                 <span class="iconify" data-icon="entypo:dot-single"
                                                                       data-inline="false" data-width="18px"
                                                                       data-height="18px"></span>
-                                                                <a class="{{ subcategory.get_last_post.publisher.user.user_rank.rank }}-color"
-                                                                   href="{% url 'view_profile' subcategory.get_last_post.publisher.username|truncatechars:10 %}">
-                                                                    {{ subcategory.get_last_post.publisher.username }}
-                                                                </a>
+                                                                {% if subcategory.get_last_post.get_last_comment %}
+                                                                    <a class="color{{ subcategory.get_last_post.get_last_comment.who_comment.user.user_rank.rank }}"
+                                                                       href="{% url 'view_profile' subcategory.get_last_post.get_last_comment.who_comment.username|truncatechars:10 %}">
+                                                                        {{ subcategory.get_last_post.get_last_comment.who_comment.username }}
+                                                                    </a>
+                                                                {% else %}
+                                                                    <a class="color{{ subcategory.get_last_post.publisher.user.user_rank.rank }}"
+                                                                       href="{% url 'view_profile' subcategory.get_last_post.publisher.username|truncatechars:10 %}">
+                                                                        {{ subcategory.get_last_post.publisher.username }}
+                                                                    </a>
+                                                                {% endif %}
                                                             </div>
                                                         </div>
                                                     {% endif %}
@@ -187,7 +212,7 @@
                             <div class="sidebar-body" style="height: 200px;">
                                 <div class="marquee">
                                     <div>
-                                        <a target="_blank" href="https://one-xgqac.world/tr/">
+                                        <a target="_blank" href="https://1-xbahishahf.com/?tag=d_370957m_3981c_">
                                             <div class="div3">
                                         <span class="iconify"
                                               data-icon="entypo:megaphone" data-inline="false"></span>
@@ -196,7 +221,7 @@
                                                 %200 Özel Bonus
                                             </div>
                                         </a>
-                                        <a target="_blank" href="https://betwinner1.com/tr/">
+                                        <a target="_blank" href="https://betwinner29.com/tr/?btag=d_6589m_1c_bw_3SzetLiuRftA1Wvx7eLR3f">
                                             <div class="div3">
                                         <span class="iconify"
                                               data-icon="entypo:megaphone" data-inline="false"></span>
@@ -205,13 +230,22 @@
                                                 975₺ Özel Bonus
                                             </div>
                                         </a>
-                                        <a target="_blank" href="https://www.hepsibahis931.com/">
+                                        <a target="_blank" href="http://tinyurl.com/jc6lj6k">
                                             <div class="div3">
                                         <span class="iconify"
                                               data-icon="entypo:megaphone" data-inline="false"></span>
                                                 <img style="width: 60px;" alt="logo-ads"
                                                      src="/media/ads-logo/youwin.png">
                                                 350₺ Bonus
+                                            </div>
+                                        </a>
+                                        <a target="_blank" href="https://www.betkanyon160.com/?btag=9871229_95925">
+                                            <div class="div3">
+                                        <span class="iconify"
+                                              data-icon="entypo:megaphone" data-inline="false"></span>
+                                                <img style="width: 60px;" alt="logo-ads"
+                                                     src="/media/ads-logo/logoBig.png">
+                                                50₺ Deneme Bonusu
                                             </div>
                                         </a>
                                     </div>

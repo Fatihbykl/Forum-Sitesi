@@ -139,6 +139,11 @@
                         </div>
                     </div>
                 </div>
+                {% if post.admin_edit %}
+                    <div class="tt-item text-right mt-0" style="background-color: #F1F3F6; color: black;">
+                        <span><b>{{ post.which_admin_edit }}</b> tarafından düzenlenmiştir.</span>
+                    </div>
+                {% endif %}
                 {% for comment in posts %}
                     <div class="tt-item">
                         <div class="post-header background-header border-top">
@@ -234,6 +239,11 @@
                             </div>
                         </div>
                     </div>
+                    {% if comment.admin_edit %}
+                        <div class="tt-item text-right mt-0" style="background-color: #F1F3F6; color: black;">
+                            <span><b>{{ comment.which_admin_edit }}</b> tarafından düzenlenmiştir.</span>
+                        </div>
+                    {% endif %}
                     <script>
                         $(document).ready(function () {
                             $('#delete-comment-{{ comment.id }}').click(function () {
@@ -391,7 +401,7 @@
                 var p = $('#info-embed');
                 if (input.val().length > 0) {
                     p.text('Kodunuz Eklendi.')
-                }else {
+                } else {
                     p.text('');
                 }
             });

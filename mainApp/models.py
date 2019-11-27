@@ -98,6 +98,8 @@ class Post(models.Model):
     publisher = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     is_fixed = models.BooleanField(default=0)
     is_locked = models.BooleanField(default=0)
+    which_admin_edit = models.CharField(max_length=100, null=True, editable=False)
+    admin_edit = models.BooleanField(default=0)
 
     class Meta:
         verbose_name_plural = "Gönderiler"
@@ -126,7 +128,7 @@ class Post(models.Model):
         return self.which_post.all()
 
     def get_last_comment(self):
-        return self.which_post.all().order_by('created_time').first()
+        return self.which_post.all().order_by('-created_time').first()
 
     def get_like_count(self):
         return self.post.all().count()
@@ -139,6 +141,8 @@ class Comments(models.Model):
     comment_text = RichTextUploadingField(max_length=2000, blank=False)
     reply = models.ForeignKey('self', related_name='reply_quote', on_delete=models.SET_NULL, null=True)
     embed_code = models.CharField(max_length=1000, null=True)
+    which_admin_edit = models.CharField(max_length=100, null=True, editable=False)
+    admin_edit = models.BooleanField(default=0)
 
     class Meta:
         verbose_name_plural = 'Yorumlar'

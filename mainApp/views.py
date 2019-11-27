@@ -58,7 +58,7 @@ def create_post(request, category_slug):
 def sub_category(request, slug):
     category = get_object_or_404(SubCategory, slug=slug)
     post_list = Post.objects.filter(category=category, is_fixed=False).order_by('-id')
-    fixed_posts = Post.objects.filter(is_fixed=True)
+    fixed_posts = Post.objects.filter(is_fixed=True, category=category)
     ### Pagination ###
     page = request.GET.get('page', 1)
     paginator = Paginator(post_list, 10)
@@ -138,6 +138,10 @@ def edit_comment(request, id):
     if not request.user.user.user_rank.edit_comments_perm and request.user != comment.who_comment:
         return HttpResponseForbidden()
     form = CommentForm(instance=comment, data=request.POST or None)
+    if request.user.user.user_rank.edit_post_perm:
+        comment.admin_edit = True
+        comment.which_admin_edit = request.user.username
+        comment.save()
     if request.method == 'POST':
         if form.is_valid():
             form.save()
@@ -206,6 +210,10 @@ def edit_post(request, slug):
     form = PostForm(instance=post, data=request.POST or None)
     if not request.user.user.user_rank.edit_post_perm and request.user != post.publisher:
         return HttpResponseForbidden()
+    if request.user.user.user_rank.edit_post_perm:
+        post.admin_edit = True
+        post.which_admin_edit = request.user.username
+        post.save()
     if request.method == 'POST':
         if form.is_valid():
             form.save()

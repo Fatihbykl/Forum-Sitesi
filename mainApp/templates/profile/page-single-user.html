@@ -75,6 +75,7 @@
                 <div class="tab-content">
                     <div class="tab-pane tt-indent-none  show active" id="tt-tab-01" role="tabpanel">
                         <div class="tt-topic-list" style="padding-left: 30px;padding-top: 50px;">
+                            {% if request.user.is_authenticated %}
                             <span style="font-weight: bold;color: black;">Hakkında</span>
                             <hr style="height: 2px;margin-top: 0;">
                             <table style="margin-bottom: 50px;">
@@ -95,6 +96,7 @@
                                     <td>{{ profile.user.get_age }}</td>
                                 </tr>
                             </table>
+                            {% endif %}
                             <span style="font-weight: bold;color: black;">Aktivite</span>
                             <hr style="height: 2px;margin-top: 0;">
                             <table>

@@ -83,14 +83,11 @@
                                              src="/media/{{ comment.which_post.publisher.user.photo }}">
                                     </div>
                                     <div class="tt-col-description">
-                                        <h6 class="tt-title"><a href="#">
+                                        <h6 class="tt-title"><a href="{% url 'single_topic' comment.which_post.slug %}#{{ comment.id }}">
                                             {{ comment.which_post.title }}
                                         </a></h6>
-                                        <div class="tt-content">
-                                            {{ comment.comment_text|truncatechars:88 }}
-                                        </div>
                                     </div>
-                                    <div class="tt-col-category"><a href="#"><span
+                                    <div class="tt-col-category"><a href="{% url 'sub_category' comment.which_post.category.slug %}"><span
                                             class="tt-color06 tt-badge"
                                             style="background-color: #357CBD;">{{ comment.which_post.category.name }}</span></a>
                                     </div>

@@ -100,7 +100,7 @@
                         <div class="tt-col-value hide-mobile pr-0" style="width: 20%;">
                             <img alt="pp" class="img-thumbnail"
                                  style="padding: 3px;margin-right: 5px;float: left;"
-                                 width="40px" height="40px" src="/media/{{ post.publisher.user.photo }}">
+                                 width="40px" height="40px" src="/media/{{ post.get_last_comment.who_comment.user.photo }}">
                             <div>
                                 <span class="tt-color-select">
                                     {% if post.get_last_comment.who_comment %}
@@ -113,7 +113,7 @@
                                     {% endif %}
                                 </span>
                                 <br>
-                                <span style="font-size: 12px;position: absolute;margin-top: -5px">{{ post.created_time }}</span>
+                                <span style="font-size: 12px;position: absolute;margin-top: -5px">{{ post.get_last_comment.created_time }}</span>
                             </div>
                         </div>
                     </div>
@@ -168,13 +168,13 @@
                                      src="/media/{{ post.get_last_comment.who_comment.user.photo }}">
                                 <div>
                                 <span class="tt-color-select">
-                                        <a class="{{ post.get_last_comment.who_comment.user.user_rank.rank }}-color"
+                                        <a class="color{{ post.get_last_comment.who_comment.user.user_rank.rank }}"
                                            href="{% url 'view_profile' post.get_last_comment.who_comment %}">
-                                        <b>{{ post.get_last_comment.who_comment }}</b>
+                                        <b>{{ post.get_last_comment.who_comment.username }}</b>
                                     </a>
                                 </span>
                                     <br>
-                                    <span style="font-size: 12px;position: absolute;margin-top: -5px">{{ post.created_time }}</span>
+                                    <span style="font-size: 12px;position: absolute;margin-top: -5px">{{ post.get_last_comment.created_time }}</span>
                                 </div>
                             {% else %}
                                 -
